@@ -305,8 +305,12 @@ src/CMakeFiles/server.dir/main.cc.o: ../src/main.cc \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_queue.h \
   ../src/base/BoundedBlockQueue.h \
-  ../src/base/ThreadPool.h
+  ../src/base/ThreadPool.h \
+  ../src/base/TimeStamp.h \
+  /usr/include/x86_64-linux-gnu/sys/time.h
 
+
+/usr/include/x86_64-linux-gnu/sys/time.h:
 
 /usr/include/c++/11/bits/deque.tcc:
 
@@ -473,6 +477,8 @@ src/CMakeFiles/server.dir/main.cc.o: ../src/main.cc \
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+../src/base/TimeStamp.h:
 
 /usr/include/wchar.h:
 

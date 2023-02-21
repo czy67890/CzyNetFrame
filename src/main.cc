@@ -11,6 +11,7 @@
 #include "base/BlockQueue.h"
 #include "base/BoundedBlockQueue.h"
 #include "base/ThreadPool.h"
+#include "base/TimeStamp.h"
 using namespace std;
 class SharedPtrCopyOnWrite{
 public:
@@ -46,16 +47,7 @@ private:
 };
 
 int main(){ 
-    std::shared_ptr<int> test1(new int(3));
-    std::shared_ptr<int> test2(new int(4));
-    std::shared_ptr<int> test3 = test1;
-    test1.swap(test2);
-    auto ali = alignof('c');
-    cout<<ali<<endl;
-    cout<<*test1<<endl;
-    
-    cout<<*test2<<endl;
-    cout<<*test3<<endl;
+    CzyNetFrame::TimeStamp stamp;
     return 0;
 }
 
