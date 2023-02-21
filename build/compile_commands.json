@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/root/code/czyServer/build/src",
+  "command": "/usr/bin/g++  -I/root/code/czyServer -I/root/code/czyServer/src -pthread -g -o CMakeFiles/server.dir/main.cc.o -c /root/code/czyServer/src/main.cc",
+  "file": "/root/code/czyServer/src/main.cc"
+},
+{
+  "directory": "/root/code/czyServer/build/src/base",
+  "command": "/usr/bin/g++ -Dbase_shared_EXPORTS -I/root/code/czyServer -I/root/code/czyServer/src -pthread -g -fPIC -o CMakeFiles/base_shared.dir/LstTimer.cc.o -c /root/code/czyServer/src/base/LstTimer.cc",
+  "file": "/root/code/czyServer/src/base/LstTimer.cc"
+},
+{
+  "directory": "/root/code/czyServer/build/src/base",
+  "command": "/usr/bin/g++  -I/root/code/czyServer -I/root/code/czyServer/src -pthread -g -o CMakeFiles/base_shared_static.dir/LstTimer.cc.o -c /root/code/czyServer/src/base/LstTimer.cc",
+  "file": "/root/code/czyServer/src/base/LstTimer.cc"
+}
+]

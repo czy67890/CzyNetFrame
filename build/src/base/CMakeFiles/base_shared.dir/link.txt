@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -pthread -g -shared -Wl,-soname,libbase_shared.so -o ../../lib/libbase_shared.so CMakeFiles/base_shared.dir/LstTimer.cc.o 

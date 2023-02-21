@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/server.dir/main.cc.o -o CMakeFiles/CMakeRelink.dir/server  ../lib/libbase_shared.so 

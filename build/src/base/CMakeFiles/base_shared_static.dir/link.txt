@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libbase_shared.a CMakeFiles/base_shared_static.dir/LstTimer.cc.o
+/usr/bin/ranlib ../../lib/libbase_shared.a

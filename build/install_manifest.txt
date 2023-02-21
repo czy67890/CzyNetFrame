@@ -1,0 +1,5 @@
+/tmp/t2/usr/share/doc/cmake/t2/COPYRIGHT
+/tmp/t2/usr/share/doc/cmake/t2/README
+/tmp/t2/usr/bin/runServer.sh
+/tmp/t2/usr/share/doc/cmake/t2/docs/readme.md
+/root/code/czyServer/build/bin/server

@@ -1,0 +1,11 @@
+if(${CMAKE_BUILD_TYPE} MATCHES "Debug")
+    message(STATUS "build with debug")
+endif()
+SET(LIBRARY_OUTPUT_DIRECTORY ${RELEASE_DIR})
+SET(SRC_LIST main.cc)
+include_directories(${PROJECT_SOURCE_DIR}/src)
+add_subdirectory(base)
+add_executable(server ${SRC_LIST} )
+
+target_link_libraries(server base_shared)
+INSTALL(TARGETS server  RUNTIME DESTINATION ${PROJECT_BINARY_DIR}/bin)
