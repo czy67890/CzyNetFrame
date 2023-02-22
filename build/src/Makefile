@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/code/czyServer
+CMAKE_SOURCE_DIR = /root/code/CzyNetFrame/CzyNetFrame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/code/czyServer/build
+CMAKE_BINARY_DIR = /root/code/CzyNetFrame/CzyNetFrame/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/code/czyServer/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles /root/code/czyServer/build/src//CMakeFiles/progress.marks
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles 0
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles /root/code/CzyNetFrame/CzyNetFrame/build/src//CMakeFiles/progress.marks
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/code/czyServer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/server.dir/rule:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/server.dir/rule
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/server.dir/rule
 .PHONY : src/CMakeFiles/server.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ server: src/CMakeFiles/server.dir/rule
 
 # fast build rule for target.
 server/fast:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/build
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/build
 .PHONY : server/fast
 
 main.o: main.cc.o
@@ -180,7 +180,7 @@ main.o: main.cc.o
 
 # target to build an object file
 main.cc.o:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/main.cc.o
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/main.cc.o
 .PHONY : main.cc.o
 
 main.i: main.cc.i
@@ -188,7 +188,7 @@ main.i: main.cc.i
 
 # target to preprocess a source file
 main.cc.i:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/main.cc.i
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/main.cc.i
 .PHONY : main.cc.i
 
 main.s: main.cc.s
@@ -196,7 +196,7 @@ main.s: main.cc.s
 
 # target to generate assembly for a file
 main.cc.s:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/main.cc.s
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/main.cc.s
 .PHONY : main.cc.s
 
 # Help Target
@@ -226,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/code/czyServer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

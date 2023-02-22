@@ -1,11 +1,12 @@
 #include "src/base/TimeStamp.h"
-#include "TimeStamp.h"
+#include <cinttypes>
 std::string CzyNetFrame::TimeStamp::toString() const
 {   
     char buf[32] = {0};
     int64_t seconds = m_microSecondsFromEpoch/KPerSecondMicroSecondsCount;
     int64_t microSeconds = m_microSecondsFromEpoch%KPerSecondMicroSecondsCount;
-    snprintf(buf,32,"%"PRI64 "%"PRI64"",seconds,microSeconds);
+    snprintf(buf,32,"%" PRId64 ".06%" PRId64 "",seconds,microSeconds);
+    return buf;
 }
 
 std::string CzyNetFrame::TimeStamp::toFormatedString(bool showMicroSeconds) const
@@ -24,7 +25,7 @@ std::string CzyNetFrame::TimeStamp::toFormatedString(bool showMicroSeconds) cons
     return buf;
 }
 
-TimeStamp CzyNetFrame::TimeStamp::now()
+CzyNetFrame::TimeStamp CzyNetFrame::TimeStamp::now()
 {   
     struct timeval tv;
     int nowSeconds = gettimeofday(&tv,NULL);

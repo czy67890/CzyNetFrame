@@ -1,8 +1,14 @@
 file(REMOVE_RECURSE
   "../../lib/libbase_shared.pdb"
   "../../lib/libbase_shared.so"
+  "CMakeFiles/base_shared.dir/Log.cc.o"
+  "CMakeFiles/base_shared.dir/Log.cc.o.d"
   "CMakeFiles/base_shared.dir/LstTimer.cc.o"
   "CMakeFiles/base_shared.dir/LstTimer.cc.o.d"
+  "CMakeFiles/base_shared.dir/TimeStamp.cc.o"
+  "CMakeFiles/base_shared.dir/TimeStamp.cc.o.d"
+  "CMakeFiles/base_shared.dir/TimeZone.cc.o"
+  "CMakeFiles/base_shared.dir/TimeZone.cc.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

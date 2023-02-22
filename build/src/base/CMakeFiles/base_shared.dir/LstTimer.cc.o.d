@@ -1,6 +1,7 @@
 src/base/CMakeFiles/base_shared.dir/LstTimer.cc.o: \
- /root/code/czyServer/src/base/LstTimer.cc /usr/include/stdc-predef.h \
- /root/code/czyServer/src/base/LstTimer.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/LstTimer.cc \
+ /usr/include/stdc-predef.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/LstTimer.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \

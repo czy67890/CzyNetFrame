@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/code/czyServer
+CMAKE_SOURCE_DIR = /root/code/CzyNetFrame/CzyNetFrame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/code/czyServer/build
+CMAKE_BINARY_DIR = /root/code/CzyNetFrame/CzyNetFrame/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -115,14 +115,14 @@ src/base/clean: src/base/CMakeFiles/base_shared_static.dir/clean
 src/CMakeFiles/server.dir/all: src/base/CMakeFiles/base_shared.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/code/czyServer/build/CMakeFiles --progress-num=5,6 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles --progress-num=11,12 "Built target server"
 .PHONY : src/CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/server.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/server.dir/rule
 
 # Convenience name for target.
@@ -141,14 +141,14 @@ src/CMakeFiles/server.dir/clean:
 src/base/CMakeFiles/base_shared.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/code/czyServer/build/CMakeFiles --progress-num=1,2 "Built target base_shared"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target base_shared"
 .PHONY : src/base/CMakeFiles/base_shared.dir/all
 
 # Build rule for subdir invocation for target.
 src/base/CMakeFiles/base_shared.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/CMakeFiles/base_shared.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 0
 .PHONY : src/base/CMakeFiles/base_shared.dir/rule
 
 # Convenience name for target.
@@ -167,14 +167,14 @@ src/base/CMakeFiles/base_shared.dir/clean:
 src/base/CMakeFiles/base_shared_static.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/code/czyServer/build/CMakeFiles --progress-num=3,4 "Built target base_shared_static"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles --progress-num=6,7,8,9,10 "Built target base_shared_static"
 .PHONY : src/base/CMakeFiles/base_shared_static.dir/all
 
 # Build rule for subdir invocation for target.
 src/base/CMakeFiles/base_shared_static.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/CMakeFiles/base_shared_static.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 0
 .PHONY : src/base/CMakeFiles/base_shared_static.dir/rule
 
 # Convenience name for target.

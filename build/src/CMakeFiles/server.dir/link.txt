@@ -1,1 +1,1 @@
-/usr/bin/g++ -pthread -g -rdynamic CMakeFiles/server.dir/main.cc.o -o server  -Wl,-rpath,/root/code/czyServer/build/lib: ../lib/libbase_shared.so 
+/usr/bin/c++ -pthread -g -rdynamic CMakeFiles/server.dir/main.cc.o -o server  -Wl,-rpath,/root/code/CzyNetFrame/CzyNetFrame/build/lib: ../lib/libbase_shared.so 

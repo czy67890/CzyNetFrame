@@ -307,8 +307,12 @@ src/CMakeFiles/server.dir/main.cc.o: ../src/main.cc \
   ../src/base/BoundedBlockQueue.h \
   ../src/base/ThreadPool.h \
   ../src/base/TimeStamp.h \
-  /usr/include/x86_64-linux-gnu/sys/time.h
+  /usr/include/x86_64-linux-gnu/sys/time.h \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h
 
+
+/usr/include/c++/11/algorithm:
 
 /usr/include/x86_64-linux-gnu/sys/time.h:
 
@@ -773,6 +777,8 @@ src/CMakeFiles/server.dir/main.cc.o: ../src/main.cc \
 /usr/include/c++/11/utility:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
+
+/usr/include/c++/11/pstl/glue_algorithm_defs.h:
 
 /usr/include/c++/11/stdexcept:
 

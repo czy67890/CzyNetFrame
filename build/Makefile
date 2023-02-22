@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/code/czyServer
+CMAKE_SOURCE_DIR = /root/code/CzyNetFrame/CzyNetFrame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/code/czyServer/build
+CMAKE_BINARY_DIR = /root/code/CzyNetFrame/CzyNetFrame/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles /root/code/czyServer/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles /root/code/CzyNetFrame/CzyNetFrame/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

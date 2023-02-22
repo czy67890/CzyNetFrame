@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/code/czyServer
+CMAKE_SOURCE_DIR = /root/code/CzyNetFrame/CzyNetFrame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/code/czyServer/build
+CMAKE_BINARY_DIR = /root/code/CzyNetFrame/CzyNetFrame/build
 
 # Include any dependencies generated for this target.
 include src/base/CMakeFiles/base_shared_static.dir/depend.make
@@ -69,43 +69,91 @@ include src/base/CMakeFiles/base_shared_static.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/base/CMakeFiles/base_shared_static.dir/flags.make
 
+src/base/CMakeFiles/base_shared_static.dir/Log.cc.o: src/base/CMakeFiles/base_shared_static.dir/flags.make
+src/base/CMakeFiles/base_shared_static.dir/Log.cc.o: ../src/base/Log.cc
+src/base/CMakeFiles/base_shared_static.dir/Log.cc.o: src/base/CMakeFiles/base_shared_static.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/base/CMakeFiles/base_shared_static.dir/Log.cc.o"
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/base/CMakeFiles/base_shared_static.dir/Log.cc.o -MF CMakeFiles/base_shared_static.dir/Log.cc.o.d -o CMakeFiles/base_shared_static.dir/Log.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/Log.cc
+
+src/base/CMakeFiles/base_shared_static.dir/Log.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base_shared_static.dir/Log.cc.i"
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/CzyNetFrame/CzyNetFrame/src/base/Log.cc > CMakeFiles/base_shared_static.dir/Log.cc.i
+
+src/base/CMakeFiles/base_shared_static.dir/Log.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base_shared_static.dir/Log.cc.s"
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/CzyNetFrame/CzyNetFrame/src/base/Log.cc -o CMakeFiles/base_shared_static.dir/Log.cc.s
+
 src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.o: src/base/CMakeFiles/base_shared_static.dir/flags.make
 src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.o: ../src/base/LstTimer.cc
 src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.o: src/base/CMakeFiles/base_shared_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/czyServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.o"
-	cd /root/code/czyServer/build/src/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.o -MF CMakeFiles/base_shared_static.dir/LstTimer.cc.o.d -o CMakeFiles/base_shared_static.dir/LstTimer.cc.o -c /root/code/czyServer/src/base/LstTimer.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.o"
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.o -MF CMakeFiles/base_shared_static.dir/LstTimer.cc.o.d -o CMakeFiles/base_shared_static.dir/LstTimer.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/LstTimer.cc
 
 src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base_shared_static.dir/LstTimer.cc.i"
-	cd /root/code/czyServer/build/src/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/czyServer/src/base/LstTimer.cc > CMakeFiles/base_shared_static.dir/LstTimer.cc.i
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/CzyNetFrame/CzyNetFrame/src/base/LstTimer.cc > CMakeFiles/base_shared_static.dir/LstTimer.cc.i
 
 src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base_shared_static.dir/LstTimer.cc.s"
-	cd /root/code/czyServer/build/src/base && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/czyServer/src/base/LstTimer.cc -o CMakeFiles/base_shared_static.dir/LstTimer.cc.s
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/CzyNetFrame/CzyNetFrame/src/base/LstTimer.cc -o CMakeFiles/base_shared_static.dir/LstTimer.cc.s
+
+src/base/CMakeFiles/base_shared_static.dir/TimeStamp.cc.o: src/base/CMakeFiles/base_shared_static.dir/flags.make
+src/base/CMakeFiles/base_shared_static.dir/TimeStamp.cc.o: ../src/base/TimeStamp.cc
+src/base/CMakeFiles/base_shared_static.dir/TimeStamp.cc.o: src/base/CMakeFiles/base_shared_static.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/base/CMakeFiles/base_shared_static.dir/TimeStamp.cc.o"
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/base/CMakeFiles/base_shared_static.dir/TimeStamp.cc.o -MF CMakeFiles/base_shared_static.dir/TimeStamp.cc.o.d -o CMakeFiles/base_shared_static.dir/TimeStamp.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeStamp.cc
+
+src/base/CMakeFiles/base_shared_static.dir/TimeStamp.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base_shared_static.dir/TimeStamp.cc.i"
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeStamp.cc > CMakeFiles/base_shared_static.dir/TimeStamp.cc.i
+
+src/base/CMakeFiles/base_shared_static.dir/TimeStamp.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base_shared_static.dir/TimeStamp.cc.s"
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeStamp.cc -o CMakeFiles/base_shared_static.dir/TimeStamp.cc.s
+
+src/base/CMakeFiles/base_shared_static.dir/TimeZone.cc.o: src/base/CMakeFiles/base_shared_static.dir/flags.make
+src/base/CMakeFiles/base_shared_static.dir/TimeZone.cc.o: ../src/base/TimeZone.cc
+src/base/CMakeFiles/base_shared_static.dir/TimeZone.cc.o: src/base/CMakeFiles/base_shared_static.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/base/CMakeFiles/base_shared_static.dir/TimeZone.cc.o"
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/base/CMakeFiles/base_shared_static.dir/TimeZone.cc.o -MF CMakeFiles/base_shared_static.dir/TimeZone.cc.o.d -o CMakeFiles/base_shared_static.dir/TimeZone.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeZone.cc
+
+src/base/CMakeFiles/base_shared_static.dir/TimeZone.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/base_shared_static.dir/TimeZone.cc.i"
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeZone.cc > CMakeFiles/base_shared_static.dir/TimeZone.cc.i
+
+src/base/CMakeFiles/base_shared_static.dir/TimeZone.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/base_shared_static.dir/TimeZone.cc.s"
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeZone.cc -o CMakeFiles/base_shared_static.dir/TimeZone.cc.s
 
 # Object files for target base_shared_static
 base_shared_static_OBJECTS = \
-"CMakeFiles/base_shared_static.dir/LstTimer.cc.o"
+"CMakeFiles/base_shared_static.dir/Log.cc.o" \
+"CMakeFiles/base_shared_static.dir/LstTimer.cc.o" \
+"CMakeFiles/base_shared_static.dir/TimeStamp.cc.o" \
+"CMakeFiles/base_shared_static.dir/TimeZone.cc.o"
 
 # External object files for target base_shared_static
 base_shared_static_EXTERNAL_OBJECTS =
 
+lib/libbase_shared.a: src/base/CMakeFiles/base_shared_static.dir/Log.cc.o
 lib/libbase_shared.a: src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.o
+lib/libbase_shared.a: src/base/CMakeFiles/base_shared_static.dir/TimeStamp.cc.o
+lib/libbase_shared.a: src/base/CMakeFiles/base_shared_static.dir/TimeZone.cc.o
 lib/libbase_shared.a: src/base/CMakeFiles/base_shared_static.dir/build.make
 lib/libbase_shared.a: src/base/CMakeFiles/base_shared_static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/code/czyServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../lib/libbase_shared.a"
-	cd /root/code/czyServer/build/src/base && $(CMAKE_COMMAND) -P CMakeFiles/base_shared_static.dir/cmake_clean_target.cmake
-	cd /root/code/czyServer/build/src/base && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/base_shared_static.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library ../../lib/libbase_shared.a"
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && $(CMAKE_COMMAND) -P CMakeFiles/base_shared_static.dir/cmake_clean_target.cmake
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/base_shared_static.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/base/CMakeFiles/base_shared_static.dir/build: lib/libbase_shared.a
 .PHONY : src/base/CMakeFiles/base_shared_static.dir/build
 
 src/base/CMakeFiles/base_shared_static.dir/clean:
-	cd /root/code/czyServer/build/src/base && $(CMAKE_COMMAND) -P CMakeFiles/base_shared_static.dir/cmake_clean.cmake
+	cd /root/code/CzyNetFrame/CzyNetFrame/build/src/base && $(CMAKE_COMMAND) -P CMakeFiles/base_shared_static.dir/cmake_clean.cmake
 .PHONY : src/base/CMakeFiles/base_shared_static.dir/clean
 
 src/base/CMakeFiles/base_shared_static.dir/depend:
-	cd /root/code/czyServer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/code/czyServer /root/code/czyServer/src/base /root/code/czyServer/build /root/code/czyServer/build/src/base /root/code/czyServer/build/src/base/CMakeFiles/base_shared_static.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/code/CzyNetFrame/CzyNetFrame /root/code/CzyNetFrame/CzyNetFrame/src/base /root/code/CzyNetFrame/CzyNetFrame/build /root/code/CzyNetFrame/CzyNetFrame/build/src/base /root/code/CzyNetFrame/CzyNetFrame/build/src/base/CMakeFiles/base_shared_static.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/base/CMakeFiles/base_shared_static.dir/depend
 

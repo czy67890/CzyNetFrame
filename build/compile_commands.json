@@ -1,17 +1,47 @@
 [
 {
-  "directory": "/root/code/czyServer/build/src",
-  "command": "/usr/bin/g++  -I/root/code/czyServer -I/root/code/czyServer/src -pthread -g -o CMakeFiles/server.dir/main.cc.o -c /root/code/czyServer/src/main.cc",
-  "file": "/root/code/czyServer/src/main.cc"
+  "directory": "/root/code/CzyNetFrame/CzyNetFrame/build/src",
+  "command": "/usr/bin/c++  -I/root/code/CzyNetFrame/CzyNetFrame -I/root/code/CzyNetFrame/CzyNetFrame/src -pthread -g -o CMakeFiles/server.dir/main.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/main.cc",
+  "file": "/root/code/CzyNetFrame/CzyNetFrame/src/main.cc"
 },
 {
-  "directory": "/root/code/czyServer/build/src/base",
-  "command": "/usr/bin/g++ -Dbase_shared_EXPORTS -I/root/code/czyServer -I/root/code/czyServer/src -pthread -g -fPIC -o CMakeFiles/base_shared.dir/LstTimer.cc.o -c /root/code/czyServer/src/base/LstTimer.cc",
-  "file": "/root/code/czyServer/src/base/LstTimer.cc"
+  "directory": "/root/code/CzyNetFrame/CzyNetFrame/build/src/base",
+  "command": "/usr/bin/c++ -Dbase_shared_EXPORTS -I/root/code/CzyNetFrame/CzyNetFrame -I/root/code/CzyNetFrame/CzyNetFrame/src -pthread -g -fPIC -o CMakeFiles/base_shared.dir/Log.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/Log.cc",
+  "file": "/root/code/CzyNetFrame/CzyNetFrame/src/base/Log.cc"
 },
 {
-  "directory": "/root/code/czyServer/build/src/base",
-  "command": "/usr/bin/g++  -I/root/code/czyServer -I/root/code/czyServer/src -pthread -g -o CMakeFiles/base_shared_static.dir/LstTimer.cc.o -c /root/code/czyServer/src/base/LstTimer.cc",
-  "file": "/root/code/czyServer/src/base/LstTimer.cc"
+  "directory": "/root/code/CzyNetFrame/CzyNetFrame/build/src/base",
+  "command": "/usr/bin/c++ -Dbase_shared_EXPORTS -I/root/code/CzyNetFrame/CzyNetFrame -I/root/code/CzyNetFrame/CzyNetFrame/src -pthread -g -fPIC -o CMakeFiles/base_shared.dir/LstTimer.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/LstTimer.cc",
+  "file": "/root/code/CzyNetFrame/CzyNetFrame/src/base/LstTimer.cc"
+},
+{
+  "directory": "/root/code/CzyNetFrame/CzyNetFrame/build/src/base",
+  "command": "/usr/bin/c++ -Dbase_shared_EXPORTS -I/root/code/CzyNetFrame/CzyNetFrame -I/root/code/CzyNetFrame/CzyNetFrame/src -pthread -g -fPIC -o CMakeFiles/base_shared.dir/TimeStamp.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeStamp.cc",
+  "file": "/root/code/CzyNetFrame/CzyNetFrame/src/base/TimeStamp.cc"
+},
+{
+  "directory": "/root/code/CzyNetFrame/CzyNetFrame/build/src/base",
+  "command": "/usr/bin/c++ -Dbase_shared_EXPORTS -I/root/code/CzyNetFrame/CzyNetFrame -I/root/code/CzyNetFrame/CzyNetFrame/src -pthread -g -fPIC -o CMakeFiles/base_shared.dir/TimeZone.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeZone.cc",
+  "file": "/root/code/CzyNetFrame/CzyNetFrame/src/base/TimeZone.cc"
+},
+{
+  "directory": "/root/code/CzyNetFrame/CzyNetFrame/build/src/base",
+  "command": "/usr/bin/c++  -I/root/code/CzyNetFrame/CzyNetFrame -I/root/code/CzyNetFrame/CzyNetFrame/src -pthread -g -o CMakeFiles/base_shared_static.dir/Log.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/Log.cc",
+  "file": "/root/code/CzyNetFrame/CzyNetFrame/src/base/Log.cc"
+},
+{
+  "directory": "/root/code/CzyNetFrame/CzyNetFrame/build/src/base",
+  "command": "/usr/bin/c++  -I/root/code/CzyNetFrame/CzyNetFrame -I/root/code/CzyNetFrame/CzyNetFrame/src -pthread -g -o CMakeFiles/base_shared_static.dir/LstTimer.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/LstTimer.cc",
+  "file": "/root/code/CzyNetFrame/CzyNetFrame/src/base/LstTimer.cc"
+},
+{
+  "directory": "/root/code/CzyNetFrame/CzyNetFrame/build/src/base",
+  "command": "/usr/bin/c++  -I/root/code/CzyNetFrame/CzyNetFrame -I/root/code/CzyNetFrame/CzyNetFrame/src -pthread -g -o CMakeFiles/base_shared_static.dir/TimeStamp.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeStamp.cc",
+  "file": "/root/code/CzyNetFrame/CzyNetFrame/src/base/TimeStamp.cc"
+},
+{
+  "directory": "/root/code/CzyNetFrame/CzyNetFrame/build/src/base",
+  "command": "/usr/bin/c++  -I/root/code/CzyNetFrame/CzyNetFrame -I/root/code/CzyNetFrame/CzyNetFrame/src -pthread -g -o CMakeFiles/base_shared_static.dir/TimeZone.cc.o -c /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeZone.cc",
+  "file": "/root/code/CzyNetFrame/CzyNetFrame/src/base/TimeZone.cc"
 }
 ]

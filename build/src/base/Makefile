@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/code/czyServer
+CMAKE_SOURCE_DIR = /root/code/CzyNetFrame/CzyNetFrame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/code/czyServer/build
+CMAKE_BINARY_DIR = /root/code/CzyNetFrame/CzyNetFrame/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/code/czyServer/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles /root/code/czyServer/build/src/base//CMakeFiles/progress.marks
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/czyServer/build/CMakeFiles 0
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles /root/code/CzyNetFrame/CzyNetFrame/build/src/base//CMakeFiles/progress.marks
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/clean
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/preinstall
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/preinstall
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/code/czyServer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/base/CMakeFiles/base_shared.dir/rule:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/CMakeFiles/base_shared.dir/rule
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/CMakeFiles/base_shared.dir/rule
 .PHONY : src/base/CMakeFiles/base_shared.dir/rule
 
 # Convenience name for target.
@@ -172,12 +172,12 @@ base_shared: src/base/CMakeFiles/base_shared.dir/rule
 
 # fast build rule for target.
 base_shared/fast:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/build
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/build
 .PHONY : base_shared/fast
 
 # Convenience name for target.
 src/base/CMakeFiles/base_shared_static.dir/rule:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/CMakeFiles/base_shared_static.dir/rule
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/base/CMakeFiles/base_shared_static.dir/rule
 .PHONY : src/base/CMakeFiles/base_shared_static.dir/rule
 
 # Convenience name for target.
@@ -186,16 +186,43 @@ base_shared_static: src/base/CMakeFiles/base_shared_static.dir/rule
 
 # fast build rule for target.
 base_shared_static/fast:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/build
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/build
 .PHONY : base_shared_static/fast
+
+Log.o: Log.cc.o
+.PHONY : Log.o
+
+# target to build an object file
+Log.cc.o:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/Log.cc.o
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/Log.cc.o
+.PHONY : Log.cc.o
+
+Log.i: Log.cc.i
+.PHONY : Log.i
+
+# target to preprocess a source file
+Log.cc.i:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/Log.cc.i
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/Log.cc.i
+.PHONY : Log.cc.i
+
+Log.s: Log.cc.s
+.PHONY : Log.s
+
+# target to generate assembly for a file
+Log.cc.s:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/Log.cc.s
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/Log.cc.s
+.PHONY : Log.cc.s
 
 LstTimer.o: LstTimer.cc.o
 .PHONY : LstTimer.o
 
 # target to build an object file
 LstTimer.cc.o:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/LstTimer.cc.o
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.o
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/LstTimer.cc.o
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.o
 .PHONY : LstTimer.cc.o
 
 LstTimer.i: LstTimer.cc.i
@@ -203,8 +230,8 @@ LstTimer.i: LstTimer.cc.i
 
 # target to preprocess a source file
 LstTimer.cc.i:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/LstTimer.cc.i
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.i
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/LstTimer.cc.i
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.i
 .PHONY : LstTimer.cc.i
 
 LstTimer.s: LstTimer.cc.s
@@ -212,9 +239,63 @@ LstTimer.s: LstTimer.cc.s
 
 # target to generate assembly for a file
 LstTimer.cc.s:
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/LstTimer.cc.s
-	cd /root/code/czyServer/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.s
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/LstTimer.cc.s
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/LstTimer.cc.s
 .PHONY : LstTimer.cc.s
+
+TimeStamp.o: TimeStamp.cc.o
+.PHONY : TimeStamp.o
+
+# target to build an object file
+TimeStamp.cc.o:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/TimeStamp.cc.o
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/TimeStamp.cc.o
+.PHONY : TimeStamp.cc.o
+
+TimeStamp.i: TimeStamp.cc.i
+.PHONY : TimeStamp.i
+
+# target to preprocess a source file
+TimeStamp.cc.i:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/TimeStamp.cc.i
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/TimeStamp.cc.i
+.PHONY : TimeStamp.cc.i
+
+TimeStamp.s: TimeStamp.cc.s
+.PHONY : TimeStamp.s
+
+# target to generate assembly for a file
+TimeStamp.cc.s:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/TimeStamp.cc.s
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/TimeStamp.cc.s
+.PHONY : TimeStamp.cc.s
+
+TimeZone.o: TimeZone.cc.o
+.PHONY : TimeZone.o
+
+# target to build an object file
+TimeZone.cc.o:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/TimeZone.cc.o
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/TimeZone.cc.o
+.PHONY : TimeZone.cc.o
+
+TimeZone.i: TimeZone.cc.i
+.PHONY : TimeZone.i
+
+# target to preprocess a source file
+TimeZone.cc.i:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/TimeZone.cc.i
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/TimeZone.cc.i
+.PHONY : TimeZone.cc.i
+
+TimeZone.s: TimeZone.cc.s
+.PHONY : TimeZone.s
+
+# target to generate assembly for a file
+TimeZone.cc.s:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/TimeZone.cc.s
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/TimeZone.cc.s
+.PHONY : TimeZone.cc.s
 
 # Help Target
 help:
@@ -230,9 +311,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... base_shared"
 	@echo "... base_shared_static"
+	@echo "... Log.o"
+	@echo "... Log.i"
+	@echo "... Log.s"
 	@echo "... LstTimer.o"
 	@echo "... LstTimer.i"
 	@echo "... LstTimer.s"
+	@echo "... TimeStamp.o"
+	@echo "... TimeStamp.i"
+	@echo "... TimeStamp.s"
+	@echo "... TimeZone.o"
+	@echo "... TimeZone.i"
+	@echo "... TimeZone.s"
 .PHONY : help
 
 
@@ -244,6 +334,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/code/czyServer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

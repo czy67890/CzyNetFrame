@@ -26,7 +26,7 @@
 						2
 					],
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-src-Debug-aadc76070b0a67950fde.json",
+					"jsonFile" : "directory-src-Debug-716298d24c9cc4c0f664.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "2.8"
@@ -80,21 +80,21 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "base_shared::@da17c8cd1000ca7e4b79",
-					"jsonFile" : "target-base_shared-Debug-931639e592ff84ba1e2d.json",
+					"jsonFile" : "target-base_shared-Debug-d2f3ee041fdc9a8e7d2e.json",
 					"name" : "base_shared",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "base_shared_static::@da17c8cd1000ca7e4b79",
-					"jsonFile" : "target-base_shared_static-Debug-902ef3bdc3568836d88b.json",
+					"jsonFile" : "target-base_shared_static-Debug-43527454181fd46cf4b6.json",
 					"name" : "base_shared_static",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "server::@145eef247bfb46b6828c",
-					"jsonFile" : "target-server-Debug-af27d17b898f2b3e0f1b.json",
+					"jsonFile" : "target-server-Debug-3e841bb02d81f3cfdb27.json",
 					"name" : "server",
 					"projectIndex" : 0
 				}
@@ -104,8 +104,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/root/code/czyServer/build",
-		"source" : "/root/code/czyServer"
+		"build" : "/root/code/CzyNetFrame/CzyNetFrame/build",
+		"source" : "/root/code/CzyNetFrame/CzyNetFrame"
 	},
 	"version" : 
 	{

@@ -1,4 +1,5 @@
-src/CMakeFiles/server.dir/main.cc.o: /root/code/czyServer/src/main.cc \
+src/CMakeFiles/server.dir/main.cc.o: \
+ /root/code/CzyNetFrame/CzyNetFrame/src/main.cc \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -145,7 +146,7 @@ src/CMakeFiles/server.dir/main.cc.o: /root/code/czyServer/src/main.cc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /root/code/czyServer/src/base/LstTimer.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/LstTimer.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
@@ -237,11 +238,13 @@ src/CMakeFiles/server.dir/main.cc.o: /root/code/czyServer/src/main.cc \
  /usr/include/c++/11/bits/stl_multimap.h /usr/include/assert.h \
  /usr/include/c++/11/future /usr/include/c++/11/condition_variable \
  /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_futex.h \
- /root/code/czyServer/src/base/BlockQueue.h \
- /root/code/czyServer/src/base/NonCopyAble.h /usr/include/c++/11/queue \
- /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
- /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/bits/stl_queue.h \
- /root/code/czyServer/src/base/BoundedBlockQueue.h \
- /root/code/czyServer/src/base/ThreadPool.h \
- /root/code/czyServer/src/base/TimeStamp.h \
- /usr/include/x86_64-linux-gnu/sys/time.h
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/BlockQueue.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/NonCopyAble.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/deque \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/bits/stl_queue.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/BoundedBlockQueue.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/ThreadPool.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeStamp.h \
+ /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h

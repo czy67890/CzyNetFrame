@@ -2,7 +2,6 @@
 #include <sys/time.h>
 #include <stdint.h>
 #include <string>
-
 namespace CzyNetFrame{
 
 constexpr int KPerSecondMicroSecondsCount = 1000*1000;

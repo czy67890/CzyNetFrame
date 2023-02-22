@@ -131,8 +131,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/root/code/czyServer/build",
-		"source" : "/root/code/czyServer"
+		"build" : "/root/code/CzyNetFrame/CzyNetFrame/build",
+		"source" : "/root/code/CzyNetFrame/CzyNetFrame"
 	},
 	"version" : 
 	{

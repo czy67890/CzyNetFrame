@@ -73,11 +73,11 @@
 			[
 				{
 					"backtrace" : 5,
-					"path" : "/root/code/czyServer"
+					"path" : "/root/code/CzyNetFrame/CzyNetFrame"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/root/code/czyServer/src"
+					"path" : "/root/code/CzyNetFrame/CzyNetFrame/src"
 				}
 			],
 			"language" : "CXX",
@@ -101,7 +101,7 @@
 		[
 			{
 				"backtrace" : 2,
-				"path" : "/root/code/czyServer/build/bin"
+				"path" : "/root/code/CzyNetFrame/CzyNetFrame/build/bin"
 			}
 		],
 		"prefix" : 
@@ -122,7 +122,7 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/root/code/czyServer/build/lib:",
+				"fragment" : "-Wl,-rpath,/root/code/CzyNetFrame/CzyNetFrame/build/lib:",
 				"role" : "libraries"
 			},
 			{
