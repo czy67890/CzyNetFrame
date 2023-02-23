@@ -4,28 +4,26 @@
 #include <assert.h>
 
 namespace CzyNetFrame{
-
+using std::string;
 constexpr int KSmallBuffer = 4000;
 constexpr int KLargeBuffer =  4000*1000;
 
-
+template<int SIZE>
 class FixedBuffer{
 public:
   FixedBuffer()
     : cur_(data_)
   {
-    setCookie(cookieStart);
   }
 
   ~FixedBuffer()
   {
-    setCookie(cookieEnd);
   }
 
   void append(const char* /*restrict*/ buf, size_t len)
   {
     // FIXME: append partially
-    if (implicit_cast<size_t>(avail()) > len)
+    if (static_cast<size_t>(avail()) > len)
     {
       memcpy(cur_, buf, len);
       cur_ += len;
@@ -34,14 +32,17 @@ public:
 
   const char* data() const { return data_; }
   int length() const { return static_cast<int>(cur_ - data_); }
-
+  string toString() const { return string(data_, length()); }
+  StringPiece toStringPiece() const { return StringPiece(data_, length()); }
   // write to data_ directly
   char* current() { return cur_; }
   int avail() const { return static_cast<int>(end() - cur_); }
   void add(size_t len) { cur_ += len; }
 
-  void reset() { cur_ = data_; }
-  void bzero() { memZero(data_, sizeof data_); }
+  void reset() { cur_ = data_; } 
+
+
+  void bzero() { ::bzero(data_,sizeof(data_)); }
 
   // for used by GDB
   const char* debugString();
@@ -55,11 +56,11 @@ public:
   char data_[SIZE];
   char* cur_;  
 }; 
-class LogStream : noncopyable
+class LogStream
 {
   typedef LogStream self;
  public:
-  typedef detail::FixedBuffer<detail::kSmallBuffer> Buffer;
+  typedef FixedBuffer<KSmallBuffer> Buffer;
 
   self& operator<<(bool v)
   {
@@ -113,7 +114,7 @@ class LogStream : noncopyable
     return operator<<(reinterpret_cast<const char*>(str));
   }
 
-  self& operator<<(const string& v)
+  self& operator<<(const std::string& v)
   {
     buffer_.append(v.c_str(), v.size());
     return *this;

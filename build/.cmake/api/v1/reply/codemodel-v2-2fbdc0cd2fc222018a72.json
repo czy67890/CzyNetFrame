@@ -80,21 +80,21 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "base_shared::@da17c8cd1000ca7e4b79",
-					"jsonFile" : "target-base_shared-Debug-d2f3ee041fdc9a8e7d2e.json",
+					"jsonFile" : "target-base_shared-Debug-ef93bdcef82ba6e4455b.json",
 					"name" : "base_shared",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "base_shared_static::@da17c8cd1000ca7e4b79",
-					"jsonFile" : "target-base_shared_static-Debug-43527454181fd46cf4b6.json",
+					"jsonFile" : "target-base_shared_static-Debug-d1fc557edd91b3b44473.json",
 					"name" : "base_shared_static",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "server::@145eef247bfb46b6828c",
-					"jsonFile" : "target-server-Debug-3e841bb02d81f3cfdb27.json",
+					"jsonFile" : "target-server-Debug-2dec9efea1f2800fa972.json",
 					"name" : "server",
 					"projectIndex" : 0
 				}

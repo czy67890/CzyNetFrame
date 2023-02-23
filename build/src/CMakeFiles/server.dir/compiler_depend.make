@@ -309,8 +309,11 @@ src/CMakeFiles/server.dir/main.cc.o: ../src/main.cc \
   ../src/base/TimeStamp.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/include/c++/11/algorithm \
-  /usr/include/c++/11/pstl/glue_algorithm_defs.h
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  ../src/base/CurrentThread.h
 
+
+../src/base/CurrentThread.h:
 
 /usr/include/c++/11/algorithm:
 

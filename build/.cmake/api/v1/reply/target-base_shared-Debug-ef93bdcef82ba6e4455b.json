@@ -1,9 +1,8 @@
 {
-	"archive" : {},
 	"artifacts" : 
 	[
 		{
-			"path" : "lib/libbase_shared.a"
+			"path" : "lib/libbase_shared.so"
 		}
 	],
 	"backtrace" : 1,
@@ -28,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 4,
 				"parent" : 0
 			},
 			{
@@ -57,7 +56,13 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-pthread -g"
+					"fragment" : "-lpthread -g -fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "base_shared_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -77,13 +82,27 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4,
+				5,
+				6
 			]
 		}
 	],
-	"id" : "base_shared_static::@da17c8cd1000ca7e4b79",
-	"name" : "base_shared_static",
-	"nameOnDisk" : "libbase_shared.a",
+	"id" : "base_shared::@da17c8cd1000ca7e4b79",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "",
+				"role" : "flags"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "base_shared",
+	"nameOnDisk" : "libbase_shared.so",
 	"paths" : 
 	{
 		"build" : "src/base",
@@ -98,7 +117,10 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4,
+				5,
+				6
 			]
 		}
 	],
@@ -107,7 +129,25 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/base/CurrentThread.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/base/Date.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/base/Log.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/base/LogStream.cc",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -129,5 +169,5 @@
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "STATIC_LIBRARY"
+	"type" : "SHARED_LIBRARY"
 }

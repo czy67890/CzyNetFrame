@@ -247,4 +247,5 @@ src/CMakeFiles/server.dir/main.cc.o: \
  /root/code/CzyNetFrame/CzyNetFrame/src/base/ThreadPool.h \
  /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeStamp.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/c++/11/algorithm \
- /usr/include/c++/11/pstl/glue_algorithm_defs.h
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/CurrentThread.h

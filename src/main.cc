@@ -13,6 +13,9 @@
 #include "base/ThreadPool.h"
 #include "base/TimeStamp.h"
 #include <algorithm>
+#include "base/CurrentThread.h"
+
+
 using namespace std;
 class SharedPtrCopyOnWrite{
 public:
@@ -47,16 +50,15 @@ private:
     std::mutex m_mux;
 };
 
+void threadFunc(){
+    cout<<CzyNetFrame::NowThread::t_cachedTid<<endl;  
+}
+
+
 int main(){ 
-    std::vector<int> vecs{1,2,3,4,5};
-    int count = vecs.size();
-    std::generate(vecs.begin(),vecs.end(),[&count](){
-        return --count;
-    });
-    for(auto i:vecs){
-        std::cout<<i<<endl;
-    }
-    std::cout<<count<<endl;
+
+    thread t1(threadFunc);
+    t1.join();
     return 0;
 }
 

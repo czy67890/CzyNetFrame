@@ -189,6 +189,60 @@ base_shared_static/fast:
 	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/build
 .PHONY : base_shared_static/fast
 
+CurrentThread.o: CurrentThread.cc.o
+.PHONY : CurrentThread.o
+
+# target to build an object file
+CurrentThread.cc.o:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/CurrentThread.cc.o
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/CurrentThread.cc.o
+.PHONY : CurrentThread.cc.o
+
+CurrentThread.i: CurrentThread.cc.i
+.PHONY : CurrentThread.i
+
+# target to preprocess a source file
+CurrentThread.cc.i:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/CurrentThread.cc.i
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/CurrentThread.cc.i
+.PHONY : CurrentThread.cc.i
+
+CurrentThread.s: CurrentThread.cc.s
+.PHONY : CurrentThread.s
+
+# target to generate assembly for a file
+CurrentThread.cc.s:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/CurrentThread.cc.s
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/CurrentThread.cc.s
+.PHONY : CurrentThread.cc.s
+
+Date.o: Date.cc.o
+.PHONY : Date.o
+
+# target to build an object file
+Date.cc.o:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/Date.cc.o
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/Date.cc.o
+.PHONY : Date.cc.o
+
+Date.i: Date.cc.i
+.PHONY : Date.i
+
+# target to preprocess a source file
+Date.cc.i:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/Date.cc.i
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/Date.cc.i
+.PHONY : Date.cc.i
+
+Date.s: Date.cc.s
+.PHONY : Date.s
+
+# target to generate assembly for a file
+Date.cc.s:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/Date.cc.s
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/Date.cc.s
+.PHONY : Date.cc.s
+
 Log.o: Log.cc.o
 .PHONY : Log.o
 
@@ -215,6 +269,33 @@ Log.cc.s:
 	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/Log.cc.s
 	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/Log.cc.s
 .PHONY : Log.cc.s
+
+LogStream.o: LogStream.cc.o
+.PHONY : LogStream.o
+
+# target to build an object file
+LogStream.cc.o:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/LogStream.cc.o
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/LogStream.cc.o
+.PHONY : LogStream.cc.o
+
+LogStream.i: LogStream.cc.i
+.PHONY : LogStream.i
+
+# target to preprocess a source file
+LogStream.cc.i:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/LogStream.cc.i
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/LogStream.cc.i
+.PHONY : LogStream.cc.i
+
+LogStream.s: LogStream.cc.s
+.PHONY : LogStream.s
+
+# target to generate assembly for a file
+LogStream.cc.s:
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared.dir/build.make src/base/CMakeFiles/base_shared.dir/LogStream.cc.s
+	cd /root/code/CzyNetFrame/CzyNetFrame/build && $(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/LogStream.cc.s
+.PHONY : LogStream.cc.s
 
 LstTimer.o: LstTimer.cc.o
 .PHONY : LstTimer.o
@@ -311,9 +392,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... base_shared"
 	@echo "... base_shared_static"
+	@echo "... CurrentThread.o"
+	@echo "... CurrentThread.i"
+	@echo "... CurrentThread.s"
+	@echo "... Date.o"
+	@echo "... Date.i"
+	@echo "... Date.s"
 	@echo "... Log.o"
 	@echo "... Log.i"
 	@echo "... Log.s"
+	@echo "... LogStream.o"
+	@echo "... LogStream.i"
+	@echo "... LogStream.s"
 	@echo "... LstTimer.o"
 	@echo "... LstTimer.i"
 	@echo "... LstTimer.s"

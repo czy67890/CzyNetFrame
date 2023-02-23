@@ -1,6 +1,8 @@
 #pragma once
 #include "src/base/LogStream.h"
 #include "src/base/TimeZone.h"
+#include "src/base/TimeStamp.h"
+
 #include <functional>
 
 
@@ -16,7 +18,7 @@ public:
         ERROR,
         FATAL,
         NUM_LOG_LEVELS,
-    }
+    };
 
     class SourceFile{
     public:
@@ -24,7 +26,7 @@ public:
     SourceFile(const char (&arr)[N])
         :m_size(N -1),m_data(arr)
     {   
-        char *startChar = strchr(arr,'/');
+        char *startChar = strrchr(arr,'/');
         if(startChar){
             m_data = startChar + 1;
             m_size = m_size - (startChar - arr  + 1);
@@ -33,8 +35,8 @@ public:
 
     SourceFile(const char *fileName)
         :m_data(fileName)
-    {
-        char *startChar = strchr(filename,'/');
+    {  
+        const char *startChar = strrchr(fileName,'/');
         if(startChar){
             m_data = startChar + 1;
         }
@@ -84,6 +86,8 @@ private:
         SourceFile m_baseName;
     };
     Impl m_impl;
+
+
 };
 
 extern Log::LOG_LEVEL g_logLevel;
@@ -121,7 +125,7 @@ T* CheckNotNull(Log::SourceFile file, int line, const char *names, T* ptr)
 {
   if (ptr == NULL)
   {
-   Logger(file, line, Log::FATAL).stream() << names;
+   Log(file, line, Log::FATAL).stream() << names;
   }
   return ptr;
 }

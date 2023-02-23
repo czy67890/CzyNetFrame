@@ -6,5 +6,5 @@ CXX_DEFINES = -Dbase_shared_EXPORTS
 
 CXX_INCLUDES = -I/root/code/CzyNetFrame/CzyNetFrame -I/root/code/CzyNetFrame/CzyNetFrame/src
 
-CXX_FLAGS = -pthread -g -fPIC
+CXX_FLAGS = -lpthread -g -fPIC
 

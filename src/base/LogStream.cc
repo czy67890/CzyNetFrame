@@ -64,8 +64,8 @@ size_t convertHex(char buf[], uintptr_t value)
   return p - buf;
 }
 
-template class FixedBuffer<kSmallBuffer>;
-template class FixedBuffer<kLargeBuffer>;
+template class FixedBuffer<KSmallBuffer>;
+template class FixedBuffer<KLargeBuffer>;
 /*
  Format a number with 5 characters, including SI units.
  [0,     999]
@@ -179,7 +179,6 @@ std::string formatIEC(int64_t s)
   return buf;
 }
 
-}
 
 template<int SIZE>
 const char* FixedBuffer<SIZE>::debugString()
@@ -188,27 +187,6 @@ const char* FixedBuffer<SIZE>::debugString()
   return data_;
 }
 
-template<int SIZE>
-void FixedBuffer<SIZE>::cookieStart()
-{
-}
-
-template<int SIZE>
-void FixedBuffer<SIZE>::cookieEnd()
-{
-}
-
-void LogStream::staticCheck()
-{
-  static_assert(kMaxNumericSize - 10 > std::numeric_limits<double>::digits10,
-                "kMaxNumericSize is large enough");
-  static_assert(kMaxNumericSize - 10 > std::numeric_limits<long double>::digits10,
-                "kMaxNumericSize is large enough");
-  static_assert(kMaxNumericSize - 10 > std::numeric_limits<long>::digits10,
-                "kMaxNumericSize is large enough");
-  static_assert(kMaxNumericSize - 10 > std::numeric_limits<long long>::digits10,
-                "kMaxNumericSize is large enough");
-}
 
 template<typename T>
 void LogStream::formatInteger(T v)
@@ -317,3 +295,5 @@ template Fmt::Fmt(const char* fmt, unsigned long long);
 
 template Fmt::Fmt(const char* fmt, float);
 template Fmt::Fmt(const char* fmt, double);
+
+}

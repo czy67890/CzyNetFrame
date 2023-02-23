@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.8)
 PROJECT(czyServer)
 SET(CMAKE_BUILD_TYPE Debug)
 include_directories(${PROJECT_SOURCE_DIR})
-SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-pthread")
+SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-lpthread")
 
 if(${CMAKE_BUILD_TYPE} MATCHES "Release")
     MESSAGE(STATUS "build with release")

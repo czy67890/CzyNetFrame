@@ -27,8 +27,11 @@ public:
         std::swap(rhs.m_microSecondsFromEpoch,m_microSecondsFromEpoch);
     }
 
-    TimeStamp now();
+    static TimeStamp now();
 
+    inline int64_t microSecondsFromEpoch() const{
+        return m_microSecondsFromEpoch;
+    }
 private:
     int64_t m_microSecondsFromEpoch{0};
 };
