@@ -24,7 +24,7 @@ std::string stackTrace(bool demangle)
 {
   std::string stack;
   const int max_frames = 200;
-  void* frame[max_frames];
+  void* frame[max_frames]; 
   int nptrs = ::backtrace(frame, max_frames);
   char** strings = ::backtrace_symbols(frame, nptrs);
   if (strings)
@@ -86,7 +86,7 @@ bool isMainThread(){
 }
 
 
+
+
 }
-
-
 }

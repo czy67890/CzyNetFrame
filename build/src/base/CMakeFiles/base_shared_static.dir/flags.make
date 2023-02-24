@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/root/code/CzyNetFrame/CzyNetFrame -I/root/code/CzyNetFrame/CzyNetFrame/src
 
-CXX_FLAGS = -lpthread -g
+CXX_FLAGS = -lpthread -g -std=gnu++20
 

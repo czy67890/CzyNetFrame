@@ -27,7 +27,7 @@
 		{
 			"backtrace" : 1,
 			"component" : "Unspecified",
-			"destination" : "/root/code/CzyNetFrame/CzyNetFrame/build/bin",
+			"destination" : "/root/code/CzyNetFrame/CzyNetFrame/bin",
 			"paths" : 
 			[
 				"src/server"

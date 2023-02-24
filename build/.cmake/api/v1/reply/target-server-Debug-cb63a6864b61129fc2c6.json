@@ -67,6 +67,9 @@
 			[
 				{
 					"fragment" : "-lpthread -g"
+				},
+				{
+					"fragment" : "-std=gnu++20"
 				}
 			],
 			"includes" : 
@@ -81,6 +84,14 @@
 				}
 			],
 			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "20"
+			},
 			"sourceIndexes" : 
 			[
 				0
@@ -91,7 +102,7 @@
 	[
 		{
 			"backtrace" : 3,
-			"id" : "base_shared::@da17c8cd1000ca7e4b79"
+			"id" : "base_shared_static::@da17c8cd1000ca7e4b79"
 		}
 	],
 	"id" : "server::@145eef247bfb46b6828c",
@@ -101,7 +112,7 @@
 		[
 			{
 				"backtrace" : 2,
-				"path" : "/root/code/CzyNetFrame/CzyNetFrame/build/bin"
+				"path" : "/root/code/CzyNetFrame/CzyNetFrame/bin"
 			}
 		],
 		"prefix" : 
@@ -122,12 +133,8 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/root/code/CzyNetFrame/CzyNetFrame/build/lib:",
-				"role" : "libraries"
-			},
-			{
 				"backtrace" : 3,
-				"fragment" : "../lib/libbase_shared.so",
+				"fragment" : "../lib/libbase_shared.a",
 				"role" : "libraries"
 			}
 		],

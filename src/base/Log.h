@@ -51,7 +51,7 @@ public:
     Log(SourceFile file,int line,LOG_LEVEL level);
     Log(SourceFile file,int line,LOG_LEVEL level,const char *func);
     Log(SourceFile file,int line,bool toAbort);
-
+    ~Log();
     LogStream &stream(){
         return m_impl.m_stream;
     }

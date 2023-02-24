@@ -43,29 +43,25 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/build/bin/server" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/build/bin/server")
+  if(EXISTS "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/bin/server" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/bin/server")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/build/bin/server"
+         FILE "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/bin/server"
          RPATH "")
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/code/CzyNetFrame/CzyNetFrame/build/bin/server")
+   "/root/code/CzyNetFrame/CzyNetFrame/bin/server")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/root/code/CzyNetFrame/CzyNetFrame/build/bin" TYPE EXECUTABLE FILES "/root/code/CzyNetFrame/CzyNetFrame/build/src/server")
-  if(EXISTS "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/build/bin/server" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/build/bin/server")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/build/bin/server"
-         OLD_RPATH "/root/code/CzyNetFrame/CzyNetFrame/build/lib:"
-         NEW_RPATH "")
+  file(INSTALL DESTINATION "/root/code/CzyNetFrame/CzyNetFrame/bin" TYPE EXECUTABLE FILES "/root/code/CzyNetFrame/CzyNetFrame/build/src/server")
+  if(EXISTS "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/bin/server" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/bin/server")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/build/bin/server")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/root/code/CzyNetFrame/CzyNetFrame/bin/server")
     endif()
   endif()
 endif()

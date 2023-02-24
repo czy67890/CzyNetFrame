@@ -7,5 +7,5 @@ include_directories(${PROJECT_SOURCE_DIR}/src)
 add_subdirectory(base)
 add_executable(server ${SRC_LIST} )
 
-target_link_libraries(server base_shared)
-INSTALL(TARGETS server  RUNTIME DESTINATION ${PROJECT_BINARY_DIR}/bin)
+target_link_libraries(server base_shared_static)
+INSTALL(TARGETS server  RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/bin)
