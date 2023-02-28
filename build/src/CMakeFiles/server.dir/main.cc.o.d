@@ -299,4 +299,10 @@ src/CMakeFiles/server.dir/main.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
- /root/code/CzyNetFrame/CzyNetFrame/src/base/CurrentThread.h
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/CurrentThread.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/AsyncLog.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/LogStream.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/StringPiece.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/Log.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/TimeZone.h \
+ /root/code/CzyNetFrame/CzyNetFrame/src/base/Singleton.h

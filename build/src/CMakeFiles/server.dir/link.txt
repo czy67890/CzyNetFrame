@@ -1,1 +1,1 @@
-/usr/bin/c++ -lpthread -g -rdynamic CMakeFiles/server.dir/main.cc.o -o server  ../lib/libbase_shared.a 
+/usr/bin/c++ -lpthread -g -rdynamic CMakeFiles/server.dir/main.cc.o -o server  ../lib/libbase_shared.a net/libnet.a 

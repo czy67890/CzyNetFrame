@@ -14,10 +14,12 @@ public:
   FixedBuffer()
     : cur_(data_)
   {
+    setCookie(cookieStart);
   }
 
   ~FixedBuffer()
   {
+    setCookie(cookieEnd);
   }
 
   void append(const char* /*restrict*/ buf, size_t len)
@@ -31,7 +33,7 @@ public:
   }
 
   const char* data() const { return data_; }
-  int length() const { return static_cast<int>(cur_ - data_); }
+  int length() const { return static_cast<int>((char *)cur_ - data_); }
   string toString() const { return string(data_, length()); }
   StringPiece toStringPiece() const { return StringPiece(data_, length()); }
   // write to data_ directly
@@ -42,7 +44,7 @@ public:
   void reset() { cur_ = data_; } 
 
 
-  void bzero() { ::bzero(data_,sizeof(data_)); }
+  void bzero() { ::memset(data_,0,sizeof(data_)); }
 
   // for used by GDB
   const char* debugString();
@@ -51,9 +53,10 @@ public:
  private:
   const char* end() const { return data_ + sizeof data_; }
  
-
+  static void cookieStart();
+  static void cookieEnd();
   void (*cookie_)();
-  char data_[SIZE];
+  char data_[SIZE]{0};
   char* cur_;  
 }; 
 class LogStream

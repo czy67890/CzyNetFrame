@@ -22,9 +22,10 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
+#include "base/NonCopyAble.h"
 #include "base/CurrentThread.h"
-
+#include "base/AsyncLog.h"
+#include "base/Log.h"
 
 using namespace std;
 class SharedPtrCopyOnWrite{
@@ -61,31 +62,41 @@ private:
 };
 
 void threadFunc(){
-    cout<<CzyNetFrame::NowThread::t_cachedTid<<endl;  
+   while(true){
+   }
+}
+template<typename T>
+struct Handle{
+Handle(T *p)
+    :m_p(p)
+{
+
+}
+~Handle(){
+    delete m_p;
 }
 
+T& operator*(){
+    return *m_p;
+}
 
-int main(){ 
-    int fd = ::open("./a.txt",O_RDWR|O_CLOEXEC);
-    std::filesystem::path m_path("./a.txt");
-    struct stat statBuf;
-    ::fstat(fd,&statBuf);
-        int* fileSize = new int();
-        if(fileSize){
-            ///±£´æÎÄ¼þ×´Ì¬
-            if(std::filesystem::is_regular_file(m_path)){
-                 int64_t modTime = std::chrono::duration_cast<std::chrono::seconds>(std::filesystem::last_write_time(m_path).time_since_epoch()).count();
-                std::time_t cfTime = std::chrono::system_clock::to_time_t( std::chrono::file_clock::to_sys(std::filesystem::last_write_time(m_path)));
-                if(cfTime == (std::time_t)(statBuf.st_mtime)){
-                    cout<<"correct";
-                }
-                std::cout<<cfTime<<statBuf.st_mtime;
-            }
-               
-        }
+T *m_p;
+};
 
-    thread t1(threadFunc);
-    t1.join();
+class NonCopy :public NonCopyAble{
+public:
+NonCopy() = default;
+NonCopy(const NonCopy &b)
+{
+
+}
+
+};
+
+
+int main(){
+    NonCopy a;
+    NonCopy b = a;
     return 0;
 }
 

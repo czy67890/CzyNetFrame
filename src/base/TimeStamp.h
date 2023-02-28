@@ -21,7 +21,7 @@ public:
 
     std::string toString() const;
 
-    std::string toFormatedString(bool showMicroSeconds) const; 
+    std::string toFormatedString(bool showMicroSeconds = true) const; 
 
     void swap(TimeStamp &rhs){
         std::swap(rhs.m_microSecondsFromEpoch,m_microSecondsFromEpoch);

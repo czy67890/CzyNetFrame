@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
   "../src/CMakeLists.txt"
   "../src/base/CMakeLists.txt"
+  "../src/net/CMakeLists.txt"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
@@ -43,6 +44,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/base/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/net/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -50,4 +52,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/server.dir/DependInfo.cmake"
   "src/base/CMakeFiles/base_shared.dir/DependInfo.cmake"
   "src/base/CMakeFiles/base_shared_static.dir/DependInfo.cmake"
+  "src/net/CMakeFiles/net.dir/DependInfo.cmake"
   )

@@ -12,6 +12,7 @@
 #include <stdio.h>
 
 #include "src/base/Date.h"
+#include "TimeZone.h"
 
 using std::string;
 using namespace CzyNetFrame;
@@ -423,7 +424,6 @@ TimeZone TimeZone::UTC()
 {
   return TimeZone(0, "UTC");
 }
-
 // static
 TimeZone TimeZone::loadZoneFile(const char* zonefile)
 {

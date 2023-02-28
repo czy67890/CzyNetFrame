@@ -23,10 +23,11 @@
 					"build" : "src",
 					"childIndexes" : 
 					[
-						2
+						2,
+						3
 					],
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-src-Debug-7db68159739a01ce6c71.json",
+					"jsonFile" : "directory-src-Debug-9314b45d2ef42f0e4062.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "2.8"
@@ -36,7 +37,7 @@
 					"source" : "src",
 					"targetIndexes" : 
 					[
-						2
+						3
 					]
 				},
 				{
@@ -54,6 +55,21 @@
 						0,
 						1
 					]
+				},
+				{
+					"build" : "src/net",
+					"jsonFile" : "directory-src.net-Debug-47a3c3dc6aa08e0f0c88.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/net",
+					"targetIndexes" : 
+					[
+						2
+					]
 				}
 			],
 			"name" : "Debug",
@@ -64,14 +80,16 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					],
 					"name" : "czyServer",
 					"targetIndexes" : 
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -92,9 +110,16 @@
 					"projectIndex" : 0
 				},
 				{
+					"directoryIndex" : 3,
+					"id" : "net::@fa6dfe1ce2083cdf68d6",
+					"jsonFile" : "target-net-Debug-b38169a1f194bcef914f.json",
+					"name" : "net",
+					"projectIndex" : 0
+				},
+				{
 					"directoryIndex" : 1,
 					"id" : "server::@145eef247bfb46b6828c",
-					"jsonFile" : "target-server-Debug-cb63a6864b61129fc2c6.json",
+					"jsonFile" : "target-server-Debug-05858885119194c9d716.json",
 					"name" : "server",
 					"projectIndex" : 0
 				}

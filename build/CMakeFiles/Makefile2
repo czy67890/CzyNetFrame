@@ -80,15 +80,18 @@ clean: src/clean
 # Recursive "all" directory target.
 src/all: src/CMakeFiles/server.dir/all
 src/all: src/base/all
+src/all: src/net/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
 src/preinstall: src/base/preinstall
+src/preinstall: src/net/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
 src/clean: src/CMakeFiles/server.dir/clean
 src/clean: src/base/clean
+src/clean: src/net/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -109,18 +112,34 @@ src/base/clean: src/base/CMakeFiles/base_shared_static.dir/clean
 .PHONY : src/base/clean
 
 #=============================================================================
+# Directory level rules for directory src/net
+
+# Recursive "all" directory target.
+src/net/all: src/net/CMakeFiles/net.dir/all
+.PHONY : src/net/all
+
+# Recursive "preinstall" directory target.
+src/net/preinstall:
+.PHONY : src/net/preinstall
+
+# Recursive "clean" directory target.
+src/net/clean: src/net/CMakeFiles/net.dir/clean
+.PHONY : src/net/clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/server.dir
 
 # All Build rule for target.
 src/CMakeFiles/server.dir/all: src/base/CMakeFiles/base_shared_static.dir/all
+src/CMakeFiles/server.dir/all: src/net/CMakeFiles/net.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles --progress-num=23,24 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles --progress-num=25,26 "Built target server"
 .PHONY : src/CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/server.dir/rule
@@ -185,6 +204,32 @@ base_shared_static: src/base/CMakeFiles/base_shared_static.dir/rule
 src/base/CMakeFiles/base_shared_static.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/clean
 .PHONY : src/base/CMakeFiles/base_shared_static.dir/clean
+
+#=============================================================================
+# Target rules for target src/net/CMakeFiles/net.dir
+
+# All Build rule for target.
+src/net/CMakeFiles/net.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles --progress-num=23,24 "Built target net"
+.PHONY : src/net/CMakeFiles/net.dir/all
+
+# Build rule for subdir invocation for target.
+src/net/CMakeFiles/net.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/net/CMakeFiles/net.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/code/CzyNetFrame/CzyNetFrame/build/CMakeFiles 0
+.PHONY : src/net/CMakeFiles/net.dir/rule
+
+# Convenience name for target.
+net: src/net/CMakeFiles/net.dir/rule
+.PHONY : net
+
+# clean rule for target.
+src/net/CMakeFiles/net.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/clean
+.PHONY : src/net/CMakeFiles/net.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

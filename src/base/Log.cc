@@ -102,7 +102,7 @@ Log::Impl::Impl(Level level,int old_errno,const SourceFile &file,int line)
 
 
 void Log::Impl::formatTime(){
-    int64_t microSecondsSinceEpoch = m_time.microSecondsFromEpoch();
+  int64_t microSecondsSinceEpoch = m_time.microSecondsFromEpoch();
   time_t seconds = static_cast<time_t>(microSecondsSinceEpoch / KPerSecondMicroSecondsCount);
   int microseconds = static_cast<int>(microSecondsSinceEpoch % KPerSecondMicroSecondsCount);
   if (seconds != t_lastSecond)

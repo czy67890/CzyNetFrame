@@ -126,6 +126,9 @@
 		},
 		{
 			"path" : "src/base/CMakeLists.txt"
+		},
+		{
+			"path" : "src/net/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

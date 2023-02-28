@@ -69,6 +69,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/root/code/CzyNetFrame/CzyNetFrame/build/src/base/cmake_install.cmake")
+  include("/root/code/CzyNetFrame/CzyNetFrame/build/src/net/cmake_install.cmake")
 
 endif()
 

@@ -19,3 +19,10 @@
 /root/code/CzyNetFrame/CzyNetFrame/build/src/base/CMakeFiles/install.dir
 /root/code/CzyNetFrame/CzyNetFrame/build/src/base/CMakeFiles/install/local.dir
 /root/code/CzyNetFrame/CzyNetFrame/build/src/base/CMakeFiles/install/strip.dir
+/root/code/CzyNetFrame/CzyNetFrame/build/src/net/CMakeFiles/net.dir
+/root/code/CzyNetFrame/CzyNetFrame/build/src/net/CMakeFiles/edit_cache.dir
+/root/code/CzyNetFrame/CzyNetFrame/build/src/net/CMakeFiles/rebuild_cache.dir
+/root/code/CzyNetFrame/CzyNetFrame/build/src/net/CMakeFiles/list_install_components.dir
+/root/code/CzyNetFrame/CzyNetFrame/build/src/net/CMakeFiles/install.dir
+/root/code/CzyNetFrame/CzyNetFrame/build/src/net/CMakeFiles/install/local.dir
+/root/code/CzyNetFrame/CzyNetFrame/build/src/net/CMakeFiles/install/strip.dir

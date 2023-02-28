@@ -200,6 +200,19 @@ base_shared_static/fast:
 	$(MAKE) $(MAKESILENT) -f src/base/CMakeFiles/base_shared_static.dir/build.make src/base/CMakeFiles/base_shared_static.dir/build
 .PHONY : base_shared_static/fast
 
+#=============================================================================
+# Target rules for targets named net
+
+# Build rule for target.
+net: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 net
+.PHONY : net
+
+# fast build rule for target.
+net/fast:
+	$(MAKE) $(MAKESILENT) -f src/net/CMakeFiles/net.dir/build.make src/net/CMakeFiles/net.dir/build
+.PHONY : net/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -214,6 +227,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... base_shared"
 	@echo "... base_shared_static"
+	@echo "... net"
 	@echo "... server"
 .PHONY : help
 

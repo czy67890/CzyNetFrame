@@ -96,17 +96,7 @@ inline Log::LOG_LEVEL Log::getLogLevel(){
     return g_logLevel;
 }
 
-#define LOG_TRACE if (CzyNetFrame::Logger::logLevel() <= CzyNetFrame::Logger::TRACE) \
-  CzyNetFrame::Logger(__FILE__, __LINE__, CzyNetFrame::Logger::TRACE, __func__).stream()
-#define LOG_DEBUG if (CzyNetFrame::Logger::logLevel() <= CzyNetFrame::Logger::DEBUG) \
-  CzyNetFrame::Logger(__FILE__, __LINE__, CzyNetFrame::Logger::DEBUG, __func__).stream()
-#define LOG_INFO if (CzyNetFrame::Logger::logLevel() <= CzyNetFrame::Logger::INFO) \
-  CzyNetFrame::Logger(__FILE__, __LINE__).stream()
-#define LOG_WARN CzyNetFrame::Logger(__FILE__, __LINE__, CzyNetFrame::Logger::WARN).stream()
-#define LOG_ERROR CzyNetFrame::Logger(__FILE__, __LINE__, CzyNetFrame::Logger::ERROR).stream()
-#define LOG_FATAL CzyNetFrame::Logger(__FILE__, __LINE__, CzyNetFrame::Logger::FATAL).stream()
-#define LOG_SYSERR CzyNetFrame::Logger(__FILE__, __LINE__, false).stream()
-#define LOG_SYSFATAL CzyNetFrame::Logger(__FILE__, __LINE__, true).stream()
+
 
 
 const char* strerror_tl(int savedErrno);
@@ -131,3 +121,16 @@ T* CheckNotNull(Log::SourceFile file, int line, const char *names, T* ptr)
 }
 
 }
+
+
+#define LOG_TRACE if (CzyNetFrame::Log::getLogLevel() <= CzyNetFrame::Log::TRACE) \
+  CzyNetFrame::Log(__FILE__, __LINE__, CzyNetFrame::Log::TRACE, __func__).stream()
+#define LOG_DEBUG if (CzyNetFrame::Log::getLogLevel() <= CzyNetFrame::Log::DEBUG) \
+  CzyNetFrame::Log(__FILE__, __LINE__, CzyNetFrame::Log::DEBUG, __func__).stream()
+#define LOG_INFO if (CzyNetFrame::Log::getLogLevel() <= CzyNetFrame::Log::INFO) \
+  CzyNetFrame::Log(__FILE__, __LINE__).stream()
+#define LOG_WARN CzyNetFrame::Log(__FILE__, __LINE__, CzyNetFrame::Log::WARN).stream()
+#define LOG_ERROR CzyNetFrame::Log(__FILE__, __LINE__, CzyNetFrame::Log::ERROR).stream()
+#define LOG_FATAL CzyNetFrame::Log(__FILE__, __LINE__, CzyNetFrame::Log::FATAL).stream()
+#define LOG_SYSERR CzyNetFrame::Log(__FILE__, __LINE__, false).stream()
+#define LOG_SYSFATAL CzyNetFrame::Log(__FILE__, __LINE__, true).stream()

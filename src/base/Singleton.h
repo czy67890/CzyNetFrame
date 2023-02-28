@@ -8,11 +8,6 @@ public:
         return *t;
     }
 
-    T *getInstance(){
-        std::call_once(once,&Singleton::initSingleton);
-        return t;
-    }
-
     static void initSingleton(){
         t = new T();
     }    

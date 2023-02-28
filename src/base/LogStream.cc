@@ -11,6 +11,7 @@
 #endif
 
 #include <inttypes.h>
+#include "LogStream.h"
 
 
 namespace CzyNetFrame{
@@ -187,6 +188,15 @@ const char* FixedBuffer<SIZE>::debugString()
   return data_;
 }
 
+template <int SIZE>
+void FixedBuffer<SIZE>::cookieStart()
+{
+}
+
+template <int SIZE>
+void FixedBuffer<SIZE>::cookieEnd()
+{
+}
 
 template<typename T>
 void LogStream::formatInteger(T v)

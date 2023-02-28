@@ -28,7 +28,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
@@ -103,6 +103,10 @@
 		{
 			"backtrace" : 3,
 			"id" : "base_shared_static::@da17c8cd1000ca7e4b79"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "net::@fa6dfe1ce2083cdf68d6"
 		}
 	],
 	"id" : "server::@145eef247bfb46b6828c",
@@ -135,6 +139,11 @@
 			{
 				"backtrace" : 3,
 				"fragment" : "../lib/libbase_shared.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "net/libnet.a",
 				"role" : "libraries"
 			}
 		],

@@ -7,12 +7,13 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include "FileUnit.h"
-
+#include <iostream>
 using namespace CzyNetFrame;
 AppendFile::AppendFile(StringArg fileName)
     :m_fp(::fopen(fileName.c_str(),"ae"))
 {
     assert(m_fp);
+    std::cout<<fileName.c_str()<<std::endl;
     ::setbuffer(m_fp,m_buffer,sizeof(m_buffer));
 }
 
@@ -20,7 +21,7 @@ AppendFile::~AppendFile(){
     ::fclose(m_fp);
 }
 
-void AppendFile::append(const char *charLine,size_t size){
+void AppendFile::append(const char *charLine,const size_t size){
     size_t written = 0;
     while(written != size){
         size_t remain = size - written;
@@ -32,8 +33,8 @@ void AppendFile::append(const char *charLine,size_t size){
                 fprintf(stderr,"AppendFile::append() failed %s\n",strerror_tl(err));
                 break;
             }
-            written += thisTimeWrite;
         }
+        written += thisTimeWrite;
     }
     m_writtenBytes += written;
 }
@@ -49,9 +50,13 @@ void AppendFile::flush(){
 }
 
 CzyNetFrame::ReadSmallFile::ReadSmallFile(StringArg fileName)
-    :m_path{fileName.c_str()}
+    :m_fd(::open(fileName.c_str(),O_RDONLY | O_CLOEXEC)),
+    m_err(0)
 {
-    
+    m_buffer[0] = '\0';
+    if(m_fd < 0){
+        m_err = errno;
+    }
 }
 
 CzyNetFrame::ReadSmallFile::~ReadSmallFile()
@@ -60,5 +65,18 @@ CzyNetFrame::ReadSmallFile::~ReadSmallFile()
 
 int CzyNetFrame::ReadSmallFile::readToBuffer(int *size)
 {
-    return 0;
+    int err = m_err;
+    ///在标准IO关闭的情况下是可以为0的
+    if(m_fd >= 0){
+        ///pread用于原子的从文件中带偏移量的读取数据
+        ssize_t n = ::pread(m_fd,m_buffer,sizeof(m_buffer) - 1,0);
+        if(n >= 0){
+            *size = static_cast<int>(n);
+        }
+        m_buffer[n] = '\0';
+    }
+    else{
+        err = errno;
+    }
+    return err;
 }
