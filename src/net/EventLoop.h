@@ -7,39 +7,28 @@
 
 
 namespace CzyNetFrame{
-class Channel;
+
+
 class Poller;
+class Channel;
 using ChannelList = std::vector<Channel*>;
 
 
-thread_local EventLoop* t_thisThreadOwnALoop{NULL}; 
 class EventLoop :public NonCopyAble{
 public:
-    EventLoop()
-    {
-        if(t_thisThreadOwnALoop){
-            LOG_FATAL<<" another loop is existed in thi thread\n";
-        }
-        else{
-
-            t_thisThreadOwnALoop = this;
-        }
-
-        m_theradId = NowThread::tid();
-
-    }
-
-
-    ~EventLoop(){
-        t_thisThreadOwnALoop = NULL;
-    }
+    EventLoop();
+    ~EventLoop();
 
     void loop();
 
 
+    void updateChannel(Channel * channel);
+
     bool isInLoopThread() const;
 
     void assertInLoopThread() ;
+
+    void setPoller(Poller *poller);
 
 private:
     pid_t m_theradId;
@@ -47,6 +36,5 @@ private:
     bool m_isRunning{false};
     std::unique_ptr<Poller> m_uPtrPoller;
 };
-
 
 }
