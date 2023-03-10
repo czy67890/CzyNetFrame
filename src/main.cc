@@ -92,6 +92,9 @@ Server::Server(int port)
     assert(ret >= 0);
 }
 
+void Mprintf(){
+    LOG_INFO<<"LOg sucess";
+}
 
 int main(){
     AsyncLog log("myproc",1024);
@@ -100,10 +103,10 @@ int main(){
     LOG_INFO<<"info ";
     //Server ser(12345);
     EventLoop *loop = new EventLoop();
-    auto cmp = [](){
-        LOG_INFO<<"i be called";
+    auto threadFunc = [loop](){
+        loop->runEvery(3.0,Mprintf);
     };
-    loop->runEvery(3.0,cmp);
+    std::thread thread(threadFunc);
     loop->loop(); 
     return 0;
 }

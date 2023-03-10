@@ -6,6 +6,8 @@
 #include "src/net/TimerQueue.h"
 #include "src/net/TimerId.h"
 #include "src/net/EpollPoller.h"
+#include "EventLoop.h"
+#include "src/net/Timer.h"
 using namespace CzyNetFrame;
 namespace{
 
@@ -157,6 +159,7 @@ void CzyNetFrame::EventLoop::doPendingFunc()
     }
     m_callingPendingFunctors = false;
 }
+
 
 void CzyNetFrame::EventLoop::wakeUp()
 {

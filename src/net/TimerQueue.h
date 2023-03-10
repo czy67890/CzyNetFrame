@@ -42,16 +42,15 @@ private:
 
     bool insert(Timer *timer);
 
-
 private:
     EventLoop *m_loop;
     const int m_timerFd;
     Channel m_timerFdChannel;
     TimerList m_timeList;
-
     ActiveTimerSet m_activeTimers;
     bool m_callingExpiredTimer;
     ActiveTimerSet m_cancelingTimer;
+
 }; 
 
 
