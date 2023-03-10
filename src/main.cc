@@ -1,6 +1,7 @@
 #include "net/EventLoop.h"
 #include "net/EpollPoller.h"
 #include "net/Channel.h"
+#include "net/TimerId.h"
 #include <cstring>
 #include <unistd.h>
 #include <sys/types.h>
@@ -97,13 +98,12 @@ int main(){
     Log::setLogLevel(Log::DEBUG);
     Log::setOutPutFunc(std::bind(&AsyncLog::append,&log,std::placeholders::_1,std::placeholders::_2));
     LOG_INFO<<"info ";
-    Server ser(12345);
+    //Server ser(12345);
     EventLoop *loop = new EventLoop();
-    EpollPoller poller(loop);
-    loop->setPoller(&poller);
-    Channel *channel = new Channel(loop,ser.listenFd());
-    channel->setReadCb(std::bind(&Server::accept,&ser,loop));
-    channel->enableRead();
+    auto cmp = [](){
+        LOG_INFO<<"i be called";
+    };
+    loop->runEvery(3.0,cmp);
     loop->loop(); 
     return 0;
 }

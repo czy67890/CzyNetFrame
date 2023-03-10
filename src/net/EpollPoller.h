@@ -5,7 +5,6 @@
 namespace CzyNetFrame{
 class TimeStamp;
 class EventLoop;
-
 class EpollPoller :public Poller
 {
 public:
@@ -28,11 +27,10 @@ public:
 
 private:
     void update(int op,Channel * channel);
-
-
     void fillActiveList(int numEvents,ChannelList &list);
     using EventVec = std::vector<struct epoll_event> ;
     EventVec m_vecEvents;
+    
     int m_epollfd;
 };
 

@@ -68,7 +68,7 @@ void CzyNetFrame::AsyncLog::threadFunc()
         if(buffersToWrite.size() > 25){
             char buf[256];
             snprintf(buf, sizeof buf, "Dropped log messages at %s, %zd larger buffers\n",
-               TimeStamp::now().toFormatedString().c_str(),
+               TimeStamp::now().toFormattedString().c_str(),
                buffersToWrite.size()-2);
             fputs(buf, stderr);
             outPut.append(buf, static_cast<int>(strlen(buf)));

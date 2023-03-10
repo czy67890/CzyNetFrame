@@ -18,6 +18,12 @@ public:
     
     void handleEvent();
 
+
+    EventLoop *getLoop()
+    {
+        return m_ownerLoop;
+    }
+
     int fd() const{
         return m_fd;
     }
@@ -74,6 +80,7 @@ public:
         m_writeCb = std::move(writeF);
     }
 
+    void remove();
 
 private:
     void update();
@@ -88,6 +95,7 @@ private:
     static const int KNoneEvent;
     static const int KReadEvent;
     static const int KWriteEvent;
+    bool m_addedToLoop{true};
 };
 
 }

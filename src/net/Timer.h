@@ -36,6 +36,10 @@ public:
         return m_numTimerCrated;
     }
 
+    int64_t sequence() const{
+        return m_sequence;
+    }
+
 private:
     const TimeCallBack m_timeCb;
     TimeStamp m_expiration;

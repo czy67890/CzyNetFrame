@@ -2,6 +2,7 @@
 #include "src/net/EventLoop.h"
 #include "src/base/Log.h"
 #include <poll.h>
+#include "Channel.h"
 using namespace CzyNetFrame;
 
 const int Channel::KNoneEvent = 0;
@@ -43,6 +44,15 @@ void CzyNetFrame::Channel::handleEvent()
     }
 
 }
+
+void CzyNetFrame::Channel::remove()
+{
+    assert(isNoneEvent());
+    m_addedToLoop = false;
+    m_ownerLoop->removeChannel(this);
+}
+
+
 
 void CzyNetFrame::Channel::update()
 {

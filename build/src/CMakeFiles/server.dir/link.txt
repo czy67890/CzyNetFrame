@@ -1,0 +1,1 @@
+/usr/bin/c++ -lpthread -g -rdynamic CMakeFiles/server.dir/main.cc.o -o server  net/libnet.a ../lib/libbase_shared.a 

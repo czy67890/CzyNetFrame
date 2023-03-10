@@ -2,13 +2,14 @@
 #include "src/base/NonCopyAble.h"
 #include <vector>
 #include <unordered_map>
+
 namespace CzyNetFrame{
 
 class Channel;
 class EventLoop;
 class TimeStamp;
+class EpollPoller;
 using ChannelList = std::vector<Channel*>;
-
 class Poller :public NonCopyAble{
 public:
     Poller(EventLoop *loop);
