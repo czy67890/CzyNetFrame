@@ -54,6 +54,8 @@ public:
 
     void doPendingFunc();
 
+    void quit();
+
 private:
     void wakeUp();
 

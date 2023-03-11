@@ -47,6 +47,9 @@ CzyNetFrame::EventLoop::EventLoop()
 
 CzyNetFrame::EventLoop::~EventLoop()
 {
+    m_wakeUpChannel->disableAll();
+    m_wakeUpChannel->remove();
+    ::close(m_wakeUpFd);
     t_thisThreadOwnALoop = NULL;
 }
 
@@ -160,6 +163,13 @@ void CzyNetFrame::EventLoop::doPendingFunc()
     m_callingPendingFunctors = false;
 }
 
+void CzyNetFrame::EventLoop::quit()
+{
+    m_isRunning = false;
+    if(!isInLoopThread()){
+        wakeUp();
+    }
+}
 
 void CzyNetFrame::EventLoop::wakeUp()
 {
