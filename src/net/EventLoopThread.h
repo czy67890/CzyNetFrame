@@ -1,9 +1,12 @@
 #pragma once
 #include <thread>
 #include <mutex>
+#include <string>
 #include <condition_variable>
 #include "src/base/NonCopyAble.h"
 #include <functional>
+using std::string;
+
 namespace CzyNetFrame{
 
 class EventLoop;
@@ -14,7 +17,7 @@ class EventLoopThread
     :public NonCopyAble
 {
 public:
-    explicit EventLoopThread();
+    explicit EventLoopThread(const LoopInitCallBack &cb = LoopInitCallBack(),const string &name = string());
 
     ~EventLoopThread();
 

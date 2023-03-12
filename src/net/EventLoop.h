@@ -74,7 +74,4 @@ private:
     std::vector<FUNC> m_vecPendingFunctor;
     std::unique_ptr<TimerQueue> m_timeQueue;
 };
-
-
-
 }

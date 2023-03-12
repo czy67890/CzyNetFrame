@@ -2,8 +2,8 @@
 #include "src/net/EventLoop.h"
 using namespace CzyNetFrame;
 
-CzyNetFrame::EventLoopThread::EventLoopThread()
-    : m_isExisting(false)
+CzyNetFrame::EventLoopThread::EventLoopThread(const LoopInitCallBack &cb ,const string &name)
+    : m_isExisting(false),m_cb(cb)
 {
 }
 

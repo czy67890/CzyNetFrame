@@ -59,6 +59,7 @@ void CzyNetFrame::Acceptor::handleRead()
     else
     {
         LOG_SYSERR << " in acceptor ::handleRead too many connfd";
+        ////this tricks to defend two many client
         if (errno == EMFILE)
         {
             ::close(m_idleFd);

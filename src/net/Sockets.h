@@ -36,7 +36,6 @@ public:
 
     void setReusePort(bool on);
 
-
     void setKeepAlive(bool on);
 
 private:

@@ -28,9 +28,10 @@ typedef std::function<void (int, const InetAddress&)> NewConnectionCallback;
 private:
 
     void handleRead();
-    Channel m_readChannel;
-    Socket m_listenSocket;
+    
     EventLoop *m_loop;
+    Socket m_listenSocket;
+    Channel m_readChannel;
     NewConnectionCallback m_acceptCb;
     bool m_isListen;
     int m_idleFd;
