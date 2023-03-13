@@ -51,6 +51,7 @@ public:
 
     void removeChannel(Channel *channel);
     
+    bool isInLoopThread();
 
     void doPendingFunc();
 

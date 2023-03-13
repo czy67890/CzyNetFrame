@@ -24,18 +24,13 @@ ssize_t Buffer::readFd(int fd, int* savedErrno)
   // when extrabuf is used, we read 128k-1 bytes at most.
   const int iovcnt = (writable < sizeof extrabuf) ? 2 : 1;
   const ssize_t n = sockets::readv(fd, vec, iovcnt);
-  if (n < 0)
-  {
-    *savedErrno = errno;
-  }
-  else if (implicit_cast<size_t>(n) <= writable)
-  {
-    writerIndex_ += n;
-  }
-  else
-  {
-    writerIndex_ = buffer_.size();
-    append(extrabuf, n - writable);
+  if (n < 0) {
+      *savedErrno = errno;
+  } else if (static_cast<size_t>(n) <= writable) {
+      writerIndex_ += n;
+  } else {
+      writerIndex_ = buffer_.size();
+      append(extrabuf, n - writable);
   }
   // if (n == writable + sizeof extrabuf)
   // {

@@ -1,22 +1,25 @@
 #pragma once
+
 #include "src/base/StringPiece.h"
 #include "src/net/Endian.h"
-
+#include <string>
 
 #include <algorithm>
 #include <vector>
 
 #include <assert.h>
 #include <string.h>
-namespace CzyNetFrame{
-    class Buffer
-{
- public:
-  static const size_t kCheapPrepend = 8;
-  static const size_t kInitialSize = 1024;
 
-  explicit Buffer(size_t initialSize = kInitialSize)
-    : buffer_(kCheapPrepend + initialSize),
+using std::string;
+
+namespace CzyNetFrame {
+    class Buffer {
+    public:
+        static const size_t kCheapPrepend = 8;
+        static const size_t kInitialSize = 1024;
+
+        explicit Buffer(size_t initialSize = kInitialSize)
+                : buffer_(kCheapPrepend + initialSize),
       readerIndex_(kCheapPrepend),
       writerIndex_(kCheapPrepend)
   {

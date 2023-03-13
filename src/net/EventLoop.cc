@@ -181,11 +181,14 @@ void CzyNetFrame::EventLoop::wakeUp()
 }
 
 
-void CzyNetFrame::EventLoop::handleRead()
-{
+void CzyNetFrame::EventLoop::handleRead() {
     uint64_t one = 1;
-    size_t n = ::read(m_wakeUpFd,&one,sizeof(one));
-    if(n != sizeof(one)){
+    size_t n = ::read(m_wakeUpFd, &one, sizeof(one));
+    if (n != sizeof(one)) {
         LOG_ERROR << "handleRead failed";
     }
+}
+
+bool EventLoop::isInLoopThread() {
+    return m_theradId == NowThread::tid();
 }

@@ -6,8 +6,8 @@ namespace CzyNetFrame{
 class EventLoop;
 
 using ErrFuncType = std::function<void()>;
-using ReadFuncType = ErrFuncType;
-using WriteFuncType = ErrFuncType;
+    using ReadFuncType = std::function<void(TimeStamp)>;
+    using WriteFuncType = ErrFuncType;
 
 
 class Channel{
@@ -71,25 +71,40 @@ public:
         m_revents = event; 
     }
 
-    void setReadCb(ReadFuncType readF){
+    void setReadCb(ReadFuncType readF) {
         m_readCb = std::move(readF);
     }
 
 
-    void setWriteCb(WriteFuncType writeF){
+    void setWriteCb(WriteFuncType writeF) {
         m_writeCb = std::move(writeF);
     }
+
+    void setCloseCb(ErrFuncType cb) {
+        m_closeCb = std::move(cb);
+    }
+
+    void setErrCb(ErrFuncType cb) {
+        m_errCb = std::move(cb);
+    }
+
+    bool isWriting() const {
+        return m_events & KWriteEvent;
+    }
+
 
     void remove();
 
 private:
     void update();
+
     int m_events;
     int m_revents;
     int m_idxs;
     ErrFuncType m_errCb;
     ReadFuncType m_readCb;
     WriteFuncType m_writeCb;
+    ErrFuncType m_closeCb;
     const int m_fd;
     EventLoop *m_ownerLoop;
     static const int KNoneEvent;
