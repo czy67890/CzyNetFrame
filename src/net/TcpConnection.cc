@@ -5,6 +5,8 @@
 #include "src/base/Log.h"
 #include "src/net/EventLoop.h"
 #include "src/net/SocketOps.h"
+#include "src/net/WeakCallBack.h"
+#include "src/net/TimerId.h"
 
 using namespace CzyNetFrame;
 
@@ -69,32 +71,48 @@ void CzyNetFrame::TcpConnection::send(CzyNetFrame::Buffer *message) {
     }
 }
 
-void CzyNetFrame::TcpConnection::forceClose() {
-
+void TcpConnection::forceClose() {
+    if (m_stat == ConnectionStat::KCONNECT || m_stat == ConnectionStat::KDISCONNECTING) {
+        setState(ConnectionStat::KDISCONNECTING);
+        m_loop->queueInLoop(std::bind(&TcpConnection::forceCloseInLoop, shared_from_this()));
+    }
 }
 
 void CzyNetFrame::TcpConnection::forceCloseWithDelay(double seconds) {
-
+    if (m_stat == ConnectionStat::KCONNECT || m_stat == ConnectionStat::KDISCONNECTING) {
+        setState(ConnectionStat::KDISCONNECTING);
+        m_loop->runAfter(seconds, makeWkCallBack(shared_from_this(), &TcpConnection::forceClose));
+    }
 }
 
 void TcpConnection::shutDown() {
+    if (m_stat == ConnectionStat::KCONNECT) {
+        setState(ConnectionStat::KDISCONNECTING);
+        m_loop->runInLoop(std::bind(&TcpConnection::shutdownInLoop, shared_from_this()));
+
+    }
 
 }
 
 void TcpConnection::setTcpNoDelay(bool on) {
-
+    m_socket->setTcpNoDelay(on);
 }
 
 void TcpConnection::startRead() {
-
+    m_loop->runInLoop(std::bind(&TcpConnection::startReadInLoop, shared_from_this()));
 }
 
 void TcpConnection::stopRead() {
-
+    m_loop->runInLoop(std::bind(&TcpConnection::stopReadInLoop, shared_from_this()));
 }
 
 void TcpConnection::connectionEstablished() {
-
+    m_loop->assertInLoopThread();
+    assert(m_stat == ConnectionStat::KCONNECTING);
+    setState(ConnectionStat::KCONNECT);
+    m_channel->tie(shared_from_this());
+    m_channel->enableRead();
+    m_connectionCb(shared_from_this());
 }
 
 void TcpConnection::connectionDestory() {
@@ -152,7 +170,7 @@ void TcpConnection::sendInLoop(const void *message, size_t len) {
         if (oldLen + remianing >= m_highWater
             && oldLen < m_highWater
             && m_highWaterCb) {
-            m_loop->queueInLoop(std::bind(m_highWaterCb, shared_from_this(), oldLen + remaining));
+            m_loop->queueInLoop(std::bind(m_highWaterCb, shared_from_this(), oldLen + remianing));
         }
         m_outputBuffer.append(static_cast<const char *>(message) + nwroted, remianing);
         if (!m_channel->isWriting()) {
@@ -162,21 +180,48 @@ void TcpConnection::sendInLoop(const void *message, size_t len) {
 }
 
 void TcpConnection::shutdownInLoop() {
-
+    m_loop->assertInLoopThread();
+    if (m_channel->isWriting()) {
+        m_socket->shutDownWrite();
+    }
 }
 
 void TcpConnection::forceCloseInLoop() {
-
+    m_loop->assertInLoopThread();
+    if (m_stat == ConnectionStat::KCONNECT || m_stat == ConnectionStat::KDISCONNECTING) {
+        handleClose();
+    }
 }
 
 const char *TcpConnection::stateToString() const {
-    return nullptr;
+    switch (m_stat) {
+        case ConnectionStat::KDISCONNECTED:
+            return "kDisconnected";
+        case ConnectionStat::KCONNECTING:
+            return "kConnecting";
+        case ConnectionStat::KCONNECT:
+            return "kConnected";
+        case ConnectionStat::KDISCONNECTING:
+            return "kDisconnecting";
+        default:
+            return "unknown state";
+    }
+}
 }
 
 void TcpConnection::startReadInLoop() {
-
+    m_loop->assertInLoopThread();
+    if (!m_reading || !m_channel->isReading()) {
+        m_channel->enableRead();
+        m_reading = true;
+    }
 }
 
 void TcpConnection::stopReadInLoop() {
+    m_loop->assertInLoopThread();
+    if (m_reading || m_channel->isReading()) {
+        m_channel->disableRead();
+        m_reading = false;
+    }
 
 }

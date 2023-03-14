@@ -7,6 +7,7 @@
 #include "src/base/LogStream.h"
 #include <string>
 #include <functional>
+#include <thread>
 #include "src/base/Log.h"
 #include "src/base/Singleton.h"
 using std::string;

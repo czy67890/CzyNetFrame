@@ -63,12 +63,12 @@ void CzyNetFrame::EventLoop::loop()
     while (m_isRunning)
     {
         m_channelList.clear();
-        m_uPtrPoller->poll(500, m_channelList);
+        TimeStamp now = m_uPtrPoller->poll(500, m_channelList);
         m_isHandleing = true;
         for (auto &channel : m_channelList)
-        {   
+        {
             m_currentActive = channel;
-            channel->handleEvent();
+            channel->handleEvent(now);
         }
         m_isHandleing = false;
         doPendingFunc();

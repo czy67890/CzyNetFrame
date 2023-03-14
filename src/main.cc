@@ -13,6 +13,7 @@
 #include <ctype.h>
 #include <errno.h>
 #include <malloc.h>
+#include "net/TcpConnection.h"
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <sys/ioctl.h>
@@ -21,6 +22,7 @@
 #include <iostream>
 #include <fcntl.h>
 #include "base/AsyncLog.h"
+#include <signal.h>
 #include "base/Log.h"
 using namespace CzyNetFrame;
 #define BUF_SIZE 1024
@@ -88,25 +90,94 @@ Server::Server(int port)
     ret = bind(m_listenFd,(struct sockaddr *)&m_serverAddr,sizeof(m_serverAddr));
     assert(ret >= 0);
     ///设置侦听以及连接队列的大小
-    ret = listen(m_listenFd,5);
+    ret = listen(m_listenFd, 5);
     assert(ret >= 0);
 }
 
-void Mprintf(){
-    LOG_INFO<<"LOg sucess";
+void Mprintf() {
+    LOG_INFO << "LOg sucess";
 }
 
-int main(){
-    AsyncLog log("myproc",1024);
-    Log::setLogLevel(Log::DEBUG);
-    Log::setOutPutFunc(std::bind(&AsyncLog::append,&log,std::placeholders::_1,std::placeholders::_2));
-    LOG_INFO<<"info ";
-    //Server ser(12345);
-    EventLoop *loop = new EventLoop();
+void daemon_init() {
+    int i;
+    pid_t pid;
+    ///第一次调用fork并exit，目的是让child1成为进程组的组长
+    if (pid = fork(); pid < 0) {
+        exit(0);
+    }
+    if (pid > 0) {
+        exit(0);
+    }
+
+    ///setsid成为会话的组长，屏蔽终端，但此时仍然可以重新打开终端
+    setsid();
+    ///消除下次调用产生的SIGHUP信号
+    signal(SIGHUP, SIG_IGN);
+    ///第二次fork将打开终端的功能完全关闭
+    if (pid = fork();pid > 0) {
+        exit(0);
+    }
+    ///关闭文件描述符
+    for (int i = 0; i < 64; ++i) {
+        ::close(i);
+    }
+    ///重新打开文件描述符
+    open("/dev/null", O_RDWR);
+    open("/dev/null", O_RDWR);
+    open("/dev/null", O_RDWR);
+    return;
+}
+
+class Te {
+public:
+    void pruint(int num) {
+        std::cout << "test  " << num << std::endl;
+    }
+};
+
+
+using memFunc = std::function<void(Te *, int)>;
+
+class TestShared : public std::enable_shared_from_this<TestShared> {
+public:
+    TestShared() {
+
+    }
+
+    void toBeBinded() {
+        std::cout << "bind suc" << std::endl;
+        return;
+    }
+
+    void testBind() {
+        std::function<void()> fuc = std::bind(&TestShared::toBeBinded, shared_from_this());
+        fuc();
+    }
+
+};
+
+
+int main() {
+
+
+    /*EventLoop *loop = new EventLoop();
     auto threadFunc = [loop](){
         loop->runEvery(3.0,Mprintf);
     };
+    int asn = getservbyname()
     std::thread thread(threadFunc);
-    loop->loop(); 
+    loop->loop(); */
+    /*daemon_init();
+    AsyncLog log("myproc", 1024);
+    Log::setLogLevel(Log::DEBUG);
+    Log::setOutPutFunc(std::bind(&AsyncLog::append, &log, std::placeholders::_1, std::placeholders::_2));
+    LOG_INFO << "info ";
+    LOG_INFO << "pid = " << ::getpid();
+
+
+    while (1) {
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        LOG_INFO << "i be called";
+    }*/
     return 0;
 }

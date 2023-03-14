@@ -20,13 +20,13 @@ struct tcp_info;
 
 namespace CzyNetFrame {
 
-    class TcpConnetion;
+    class TcpConnection;
 
     class Buffer;
 
     class TimeStamp;
 
-    using TcpConnectionPtr = std::shared_ptr<TcpConnetion>;
+    using TcpConnectionPtr = std::shared_ptr<TcpConnection>;
     using ConnectionCallBack = std::function<void(const TcpConnectionPtr &connectionPtr)>;
     using MessageCallBack = std::function<void(const TcpConnectionPtr &connectionPtr, Buffer, TimeStamp)>;
     using HighWaterCallBack = std::function<void(const TcpConnectionPtr &, size_t)>;
@@ -45,7 +45,7 @@ namespace CzyNetFrame {
     };
 
 
-    class TcpConnection : public NonCopyAble, std::enable_shared_from_this<TcpConnetion> {
+    class TcpConnection : public NonCopyAble, public std::enable_shared_from_this<TcpConnection> {
 
     public:
         TcpConnection(EventLoop *loop, const string &name, int sockfd, const InetAddress &localAddr,
