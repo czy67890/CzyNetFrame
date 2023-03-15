@@ -15,21 +15,17 @@ using std::string;
 #include <functional>
 #include "src/net/InetAddress.h"
 #include "src/net/Buffer.h"
+#include "src/net/CallbackDefine.h"
 
 struct tcp_info;
 
 namespace CzyNetFrame {
 
-    class TcpConnection;
 
     class Buffer;
 
     class TimeStamp;
 
-    using TcpConnectionPtr = std::shared_ptr<TcpConnection>;
-    using ConnectionCallBack = std::function<void(const TcpConnectionPtr &connectionPtr)>;
-    using MessageCallBack = std::function<void(const TcpConnectionPtr &connectionPtr, Buffer, TimeStamp)>;
-    using HighWaterCallBack = std::function<void(const TcpConnectionPtr &, size_t)>;
 
     class EventLoop;
 

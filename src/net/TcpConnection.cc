@@ -116,22 +116,68 @@ void TcpConnection::connectionEstablished() {
 }
 
 void TcpConnection::connectionDestory() {
-
+    m_loop->assertInLoopThread();
+    if (m_stat == ConnectionStat::KCONNECT) {
+        setState(ConnectionStat::KDISCONNECTED);
+        m_channel->disableAll();
+        m_connectionCb(shared_from_this());
+    }
+    m_channel->remove();
 }
 
 void TcpConnection::handleRead(TimeStamp receiveTime) {
-
+    m_loop->assertInLoopThread();
+    int savedErrno = 0;
+    size_t n = m_inputBuffer.readFd(m_channel->fd(), &savedErrno);
+    if (n > 0) {
+        m_msgCb(shared_from_this(), &m_inputBuffer, receiveTime);
+    } else if (n == 0) {
+        handleClose();
+    } else {
+        errno = savedErrno;
+        LOG_SYSERR << "TCpConnection ::HandleRead";
+        handleError();
+    }
 }
 
 void TcpConnection::handleWrite() {
+    m_loop->assertInLoopThread();
+    if (m_channel->isWriting()) {
+        size_t n = sockets::write(m_channel->fd(), m_outputBuffer.peek(), m_outputBuffer.readableBytes());
+        if (n > 0) {
+            m_outputBuffer.retrieve(n);
+            if (m_outputBuffer.readableBytes() == 0) {
+                m_channel->disableWrite();
+                if (m_sendFinishCb) {
+                    m_loop->queueInLoop(std::bind(m_sendFinishCb, shared_from_this()));
+                }
+                if (m_stat == ConnectionStat::KDISCONNECTING) {
+                    shutdownInLoop();
+                }
+            }
+        } else {
+            LOG_SYSERR << "TcpConnection::handleWrite";
+        }
 
+    } else {
+        LOG_SYSERR << "connfd fd =" << m_channel->fd() << " is down";
+    }
 }
 
 void TcpConnection::handleClose() {
-
+    m_loop->assertInLoopThread();
+    LOG_TRACE << "fd = " << m_channel->fd() << " stat = " << stateToString();
+    assert(m_stat == ConnectionStat::KCONNECT || m_stat == ConnectionStat::KDISCONNECTING);
+    setState(ConnectionStat::KDISCONNECTED);
+    TcpConnectionPtr protectedThis(shared_from_this());
+    m_connectionCb(protectedThis);
+    m_closeCb(protectedThis);
 }
 
 void TcpConnection::handleError() {
+    int err = sockets::getSocketError(m_channel->fd());
+    LOG_ERROR << "TcpConnection::handleError [" << m_name
+              << "] - SO_ERROR = " << err << " " << strerror_tl(err);
 
 }
 
@@ -207,7 +253,6 @@ const char *TcpConnection::stateToString() const {
             return "unknown state";
     }
 }
-}
 
 void TcpConnection::startReadInLoop() {
     m_loop->assertInLoopThread();
@@ -223,5 +268,4 @@ void TcpConnection::stopReadInLoop() {
         m_channel->disableRead();
         m_reading = false;
     }
-
 }
