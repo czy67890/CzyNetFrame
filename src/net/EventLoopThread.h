@@ -5,6 +5,7 @@
 #include <condition_variable>
 #include "src/base/NonCopyAble.h"
 #include <functional>
+#include <memory>
 using std::string;
 
 namespace CzyNetFrame{
@@ -31,8 +32,8 @@ public:
 private:
     std::mutex m_mux;
     std::condition_variable m_cond;
-    std::thread m_loopThread;
-    EventLoop * m_loop{NULL};
+    std::unique_ptr<std::thread> m_loopThread;
+    EventLoop *m_loop{NULL};
     bool m_isExisting{false};
     LoopInitCallBack m_cb;
 };

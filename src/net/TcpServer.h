@@ -20,14 +20,15 @@ namespace CzyNetFrame {
     class EventLoopThreadPool;
 
     class TcpServer : public NonCopyAble {
+
+
+    public:
         enum Option {
             KNoReusePort,
             KReusePort
         };
-
-    public:
         using ConnectionMap = std::map<string, TcpConnectionPtr>;
-        using ThreadInitCb = std::function<void(EventLoop *)>;
+        using ThreadInitCb = std::function<void(EventLoop * )>;
 
 
         TcpServer(EventLoop *loop, const InetAddress &addr, const string &nameArg, Option opt);

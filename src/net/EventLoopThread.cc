@@ -12,13 +12,13 @@ CzyNetFrame::EventLoopThread::~EventLoopThread()
     m_isExisting = true;
     if(m_loop == NULL){
         m_loop->quit();
-        m_loopThread.join();
+        m_loopThread->join();
     }
 }
 
 EventLoop *CzyNetFrame::EventLoopThread::startLoop()
 {
-    m_loopThread = std::thread(std::bind(&EventLoopThread::threadFunc, this));
+    m_loopThread = std::make_unique<std::thread>((std::bind(&EventLoopThread::threadFunc, this)));
     {
         std::unique_lock<std::mutex> lk(m_mux);
         while (m_loop == NULL)

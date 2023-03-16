@@ -74,9 +74,10 @@ void CzyNetFrame::EpollPoller::removeChannel(Channel *channel)
 
 TimeStamp CzyNetFrame::EpollPoller::poll(int timeOutMs, ChannelList &list)
 {
-    int savedErrno = errno;
+
     TimeStamp now (TimeStamp::now());
     int numEvents = ::epoll_wait(m_epollfd, &(*m_vecEvents.begin()), m_vecEvents.size(), timeOutMs);
+    int savedErrno = errno;
     if (numEvents > 0)
     {
         fillActiveList(numEvents,list);   

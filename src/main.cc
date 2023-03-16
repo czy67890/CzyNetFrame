@@ -8,6 +8,7 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <stdio.h>
+#include <sys/uio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
@@ -18,16 +19,21 @@
 #include <arpa/inet.h>
 #include <sys/ioctl.h>
 #include <stdarg.h>
+#include <sys/un.h>
+#include "net/TcpServer.h"
+#include "net/InetAddress.h"
 #include <fcntl.h>
 #include <iostream>
 #include <fcntl.h>
 #include "base/AsyncLog.h"
 #include <signal.h>
 #include "base/Log.h"
+
 using namespace CzyNetFrame;
 #define BUF_SIZE 1024
 char recvBuf[BUF_SIZE] = {0};
-class Server{
+
+class Server {
 public:
     Server(int port = 12345);
     ~Server(){}
@@ -157,6 +163,45 @@ public:
 };
 
 
+class TestProtected {
+public:
+    void printProtected() {
+        std::cout << "protected called propertyly" << std::endl;
+    }
+};
+
+class TestPublic {
+public:
+    void printPublic() {
+        std::cout << "public called properly" << std::endl;
+    }
+
+};
+
+class AllSub :
+        public TestPublic, protected TestProtected {
+
+};
+
+void onlyPrint() {
+    LOG_INFO << "i be called properly";
+}
+
+class A {
+
+};
+
+class B : public A {
+
+};
+
+
+void msgcallback(const TcpConnectionPtr &connectionPtr, Buffer *buffer, TimeStamp) {
+    LOG_INFO << "recv" << buffer->retrieveAllAsString();
+    char *msg = "i be ";
+    connectionPtr->send(msg, strlen(msg));
+}
+
 int main() {
 
 
@@ -168,9 +213,7 @@ int main() {
     std::thread thread(threadFunc);
     loop->loop(); */
     /*daemon_init();
-    AsyncLog log("myproc", 1024);
-    Log::setLogLevel(Log::DEBUG);
-    Log::setOutPutFunc(std::bind(&AsyncLog::append, &log, std::placeholders::_1, std::placeholders::_2));
+
     LOG_INFO << "info ";
     LOG_INFO << "pid = " << ::getpid();
 
@@ -179,5 +222,17 @@ int main() {
         std::this_thread::sleep_for(std::chrono::seconds(1));
         LOG_INFO << "i be called";
     }*/
+    A *a = new A;
+    B *b = static_cast<B *>(a);
+    AsyncLog log("myproc", 1024 * 1024);
+    Log::setLogLevel(Log::DEBUG);
+    Log::setOutPutFunc(std::bind(&AsyncLog::append, &log, std::placeholders::_1, std::placeholders::_2));
+    EventLoop *mainLoop = new EventLoop();
+    InetAddress localAddr(12345);
+    TcpServer server(mainLoop, localAddr, "testServer", CzyNetFrame::TcpServer::KReusePort);
+    server.setMessageCallback(msgcallback);
+    server.setThreadNum(1);
+    server.start();
+    mainLoop->loop();
     return 0;
 }

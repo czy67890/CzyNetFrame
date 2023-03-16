@@ -20,6 +20,7 @@ void CzyNetFrame::EventLoopThreadPool::start(const ThreadInitCb &cb)
     assert(!m_started);
     m_baseLoop->assertInLoopThread();
     m_started = true;
+    m_thread.reserve(m_threadNum);
     for(int i = 0;i < m_threadNum;++i){
         char buf[m_name.size() + 32];
         snprintf(buf,sizeof(buf),"%s%d",m_name.c_str(),i);
